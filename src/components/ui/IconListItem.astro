@@ -1,0 +1,16 @@
+---
+import type { IconType } from 'react-icons';
+
+interface Props {
+  icon: IconType;
+}
+
+const { icon: Icon } = Astro.props;
+---
+
+<li class="flex items-start gap-4 border-dashed border-t border-line-strong py-3.5 text-[17px] leading-[1.45] first:border-t-0 first:pt-0 last:pb-0">
+  <Icon className="mt-px size-[22px] flex-none" strokeWidth={1.4} aria-hidden="true" />
+  <span>
+    <slot />
+  </span>
+</li>

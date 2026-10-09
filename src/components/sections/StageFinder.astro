@@ -1,0 +1,44 @@
+---
+import { site } from '@/config/site';
+import { stages } from '@/data/content';
+
+import StageSelector from '../islands/StageSelector';
+import Button from '../ui/Button.astro';
+import Container from '../ui/Container.astro';
+import Stamp from '../ui/Stamp.astro';
+---
+
+<section
+  id="start"
+  class="overflow-x-clip pt-[clamp(64px,9vw,120px)] pb-[clamp(48px,6vw,80px)]"
+  aria-label="Where are you in your cancer journey"
+>
+  <Container class="grid grid-fit-420 items-center gap-x-24 gap-y-12">
+    <div class="ps-[clamp(0px,4vw,64px)]">
+      <div class="relative inline-block">
+        <p class="text-mega font-normal" aria-hidden="true">
+          40M+
+        </p>
+        <Stamp
+          text="WITH YOU THROUGH EVERY STEP · "
+          letterSpacing={3.56}
+          class="absolute -top-[58px] -right-11"
+        />
+      </div>
+      <p class="mt-7 max-w-[430px] text-lead">
+        <span class="sr-only">40M+</span> cancer studies behind Healz, plus top board-certified
+        oncologists. All in one chat.
+      </p>
+    </div>
+    <div>
+      <StageSelector client:visible stages={stages} />
+      <p class="mt-4 text-[13px] leading-[1.55] text-muted">
+        Tell Healz your diagnosis, where you are in treatment and what worries you most. Upload your
+        reports and scans. A top oncologist can join your chat within 24 hours, sometimes longer.
+      </p>
+      <Button href={site.links.app} block class="mt-[22px]">
+        Get my next steps
+      </Button>
+    </div>
+  </Container>
+</section>

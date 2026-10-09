@@ -1,0 +1,29 @@
+---
+import { LuCheck, LuMinus } from 'react-icons/lu';
+
+interface Props {
+  included?: boolean;
+  divided?: boolean;
+}
+
+const { included = true, divided = true } = Astro.props;
+const Icon = included ? LuCheck : LuMinus;
+---
+
+<li
+  class:list={[
+    'flex items-start gap-3 text-[15px] leading-[1.45]',
+    divided && 'py-[11px]',
+    !included && 'text-subtle',
+  ]}
+>
+  <Icon
+    className={`mt-0.5 size-[17px] flex-none ${included ? 'text-maroon' : 'text-faint'}`}
+    strokeWidth={included ? 2.2 : 2}
+    aria-hidden="true"
+  />
+  <span>
+    {!included && <span class="sr-only">Not included:</span>}
+    <slot />
+  </span>
+</li>

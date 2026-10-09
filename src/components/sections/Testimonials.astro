@@ -1,0 +1,46 @@
+---
+import { LuBookOpen, LuClock, LuUsers } from 'react-icons/lu';
+
+import { quotes } from '@/data/content';
+
+import Carousel from '../islands/Carousel';
+import Container from '../ui/Container.astro';
+import Eyebrow from '../ui/Eyebrow.astro';
+import Heading from '../ui/Heading.astro';
+import IconListItem from '../ui/IconListItem.astro';
+import QuoteCard from './testimonials/QuoteCard.astro';
+---
+
+<section
+  class="bg-sand pt-[clamp(56px,7vw,96px)] pb-[clamp(40px,5vw,56px)]"
+  aria-labelledby="families-title"
+>
+  <Container class="grid grid-fit-420 items-start gap-x-24 gap-y-9">
+    <div>
+      <Eyebrow>Patients and caregivers</Eyebrow>
+      <Heading id="families-title" class="mt-4">
+        Real families, real decisions
+      </Heading>
+      <p class="mt-3.5 text-[17px] leading-normal text-body">
+        What Healz told them, in their own words.
+      </p>
+    </div>
+    <ul class="max-w-[380px]">
+      <IconListItem icon={LuBookOpen}>40M+ cancer studies behind the AI</IconListItem>
+      <IconListItem icon={LuUsers}>170+ doctors from leading hospitals</IconListItem>
+      <IconListItem icon={LuClock}>
+        A top doctor in your chat within 24 hours, sometimes longer
+      </IconListItem>
+    </ul>
+  </Container>
+  <div class="mt-12">
+    <Carousel client:visible label="Patient and caregiver stories" tone="sand">
+      {quotes.map((quote) => (
+        <QuoteCard quote={quote} />
+      ))}
+      <p slot="aside" class="text-xs leading-normal text-muted">
+        Quotes from Healz patients and caregivers, shortened.
+      </p>
+    </Carousel>
+  </div>
+</section>

@@ -1,0 +1,89 @@
+---
+import { LuClock, LuMessageCircle, LuUsers } from 'react-icons/lu';
+
+import { getImage } from 'astro:assets';
+
+import studyMan from '@/assets/images/cancer-study-man.jpg';
+import heroPoster from '@/assets/images/ref-hero-desktop-poster.jpg';
+
+import ChatBubble from '../ui/ChatBubble.astro';
+import Container from '../ui/Container.astro';
+import LazyVideo from '../ui/LazyVideo.astro';
+import Photo from '../ui/Photo.astro';
+
+const panel = 'h-[clamp(300px,31vw,450px)] flex-[1_0_min(300px,78vw)] snap-start overflow-hidden';
+const sizes = '(min-width: 1000px) 480px, 78vw';
+const poster = await getImage({ src: heroPoster, height: 900, format: 'webp', quality: 70 });
+const heroVideo =
+  'https://s3.eu-central-1.amazonaws.com/healz-prod-public/campaign-landing/hero-desktop.mp4';
+
+const highlights = [
+  { icon: LuUsers, lines: ['For patients and', 'their caregivers'] },
+  { icon: LuMessageCircle, lines: ['Frontier cancer-trained AI,', 'all in one chat'] },
+  { icon: LuClock, lines: ['Top oncologists join', 'within 24 hours'] },
+];
+---
+
+<div class="bg-[linear-gradient(var(--color-white)_50%,var(--color-canvas)_50%)]">
+  <div class="no-scrollbar mx-auto flex max-w-[1440px] snap-x snap-mandatory overflow-x-auto">
+    <div class:list={[panel, 'bg-[#2b211c]']}>
+      <Photo
+        src={studyMan}
+        alt="A man reading about his cancer treatment options"
+        widths={[400, 600, 960, 1365]}
+        sizes={sizes}
+        position="62% 30%"
+        priority
+      />
+    </div>
+    <div
+      class:list={[panel, '@container relative bg-panel']}
+      role="img"
+      aria-label="Example Healz chat with an oncologist"
+    >
+      <div
+        class="absolute top-0 right-[6%] bottom-hero-overlap left-[8%] flex flex-col justify-center gap-[0.7em] text-[clamp(10.5px,2.92cqw,14px)] @[400px]:left-[12%]"
+        aria-hidden="true"
+      >
+        <ChatBubble author="user" size="fluid" class="ml-[22%] self-start!">
+          Is my chemo plan right?
+        </ChatBubble>
+        <ChatBubble author="healz" name="Healz" size="fluid" class="max-w-[24.3em]">
+          The plan is FOLFOX for stage III colon cancer. The pathology report has no MMR/MSI result.
+          It can change the options, so I propose testing before cycle 1.
+        </ChatBubble>
+        <ChatBubble author="doctor" name="Dr. Miguel Albino" size="fluid" class="max-w-[22.9em]">
+          Agree. Order MMR/MSI testing before the first cycle.
+        </ChatBubble>
+      </div>
+    </div>
+    <div class:list={[panel, 'bg-[#1d1f4f]']}>
+      <LazyVideo src={heroVideo} poster={poster.src} class="object-[63%_50%]" />
+    </div>
+  </div>
+</div>
+
+<Container>
+  <ul class="relative -mt-hero-overlap grid grid-fit-220 gap-x-6 gap-y-7 bg-white px-6 py-[clamp(28px,3vw,40px)] text-center shadow-[0_10px_35px_rgba(0,0,0,0.05)]">
+    {highlights.map(({ icon: Icon, lines }) => (
+      <li class="flex flex-col items-center gap-3.5 text-[17px] leading-[1.4]">
+        <Icon className="size-[30px]" strokeWidth={1.2} aria-hidden="true" />
+        <span>
+          {lines[0]}
+          <br />
+          {lines[1]}
+        </span>
+      </li>
+    ))}
+  </ul>
+  <p class="mt-6 max-w-[1000px] text-[13px] leading-[1.55] text-muted">
+    <strong class="font-semibold text-ink">Not a medical provider:</strong> Healz.ai is an
+    educational service.{' '}
+    <strong class="font-semibold text-ink">Always discuss every decision with your doctor.</strong>
+    AI can make mistakes. See{' '}
+    <a href="#important" class="text-ink underline underline-offset-2">
+      important information
+    </a>
+    .
+  </p>
+</Container>

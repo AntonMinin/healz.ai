@@ -1,0 +1,44 @@
+---
+import Comparison from '@/components/sections/Comparison.astro';
+import Doctors from '@/components/sections/Doctors.astro';
+import Faq from '@/components/sections/Faq.astro';
+import FeaturedIn from '@/components/sections/FeaturedIn.astro';
+import Footer from '@/components/sections/Footer.astro';
+import Founders from '@/components/sections/Founders.astro';
+import Header from '@/components/sections/Header.astro';
+import Hero from '@/components/sections/Hero.astro';
+import HeroGallery from '@/components/sections/HeroGallery.astro';
+import HowItWorks from '@/components/sections/HowItWorks.astro';
+import Included from '@/components/sections/Included.astro';
+import PressStory from '@/components/sections/PressStory.astro';
+import Pricing from '@/components/sections/Pricing.astro';
+import PromoBar from '@/components/sections/PromoBar.astro';
+import StageFinder from '@/components/sections/StageFinder.astro';
+import SubNav from '@/components/sections/SubNav.astro';
+import Testimonials from '@/components/sections/Testimonials.astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+---
+
+<BaseLayout>
+  <div class="masthead-shadow sticky top-0 z-40">
+    <PromoBar />
+    <Header />
+  </div>
+  <main id="main">
+    <Hero />
+    <HeroGallery />
+    <StageFinder />
+    <SubNav />
+    <HowItWorks />
+    <FeaturedIn />
+    <PressStory />
+    <Testimonials />
+    <Comparison />
+    <Included />
+    <Pricing />
+    <Doctors />
+    <Founders />
+    <Faq />
+  </main>
+  <Footer />
+</BaseLayout>

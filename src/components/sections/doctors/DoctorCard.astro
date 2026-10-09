@@ -1,0 +1,32 @@
+---
+import { Image } from 'astro:assets';
+
+import type { Doctor } from '@/data/doctors';
+
+import Photo from '../../ui/Photo.astro';
+
+interface Props {
+  doctor: Doctor;
+}
+
+const { doctor } = Astro.props;
+---
+
+<article class="flex-[0_0_min(264px,70vw)] snap-start">
+  <div class="relative aspect-4/5 bg-stone">
+    <Photo
+      src={doctor.photo}
+      alt={doctor.name}
+      widths={[264, 384, 528]}
+      sizes="264px"
+      position="50% 22%"
+    />
+    <Image src={doctor.flag} alt="" class="absolute top-3.5 left-3.5 block h-auto w-[22px]" />
+  </div>
+  <h3 class="mt-4 text-lg leading-tight tracking-[-0.01em]">{doctor.name}</h3>
+  <p class="mt-0.5 text-sm leading-[1.4] text-maroon">{doctor.role}</p>
+  <p class="mt-2.5 text-[13px] leading-normal text-muted">{doctor.credentials}</p>
+  <p class="mt-1.5 text-[13px] leading-normal">
+    {doctor.city} · {doctor.organization}
+  </p>
+</article>

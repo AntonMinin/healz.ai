@@ -1,0 +1,53 @@
+---
+import type { PlanFeature } from '@/data/content';
+
+import Button from '../../ui/Button.astro';
+import CheckItem from '../../ui/CheckItem.astro';
+
+interface Props {
+  name: string;
+  badge: string;
+  price: string;
+  period: string;
+  features: readonly PlanFeature[];
+  cta: string;
+  href: string;
+  featured?: boolean;
+}
+
+const { name, badge, price, period, features, cta, href, featured = false } = Astro.props;
+---
+
+<article
+  class="flex flex-col bg-white shadow-[0_10px_35px_rgba(0,0,0,0.01)]"
+  aria-labelledby={`plan-${name.toLowerCase()}`}
+>
+  <p
+    class:list={[
+      'px-8 py-[9px] text-[13px] font-semibold tracking-[0.04em]',
+      featured ? 'bg-lime' : ' text-muted pt-3.5 pb-1',
+    ]}
+  >
+    {badge}
+  </p>
+  <div class="flex flex-1 flex-col px-8 pt-7 pb-8">
+    <h3 id={`plan-${name.toLowerCase()}`} class="text-[15px] font-semibold">
+      {name}
+    </h3>
+    <p class="mt-2.5 flex items-baseline gap-2">
+      <span class="text-[56px] leading-none tracking-[-0.05em]">{price}</span>
+      <span class="text-[17px] text-muted">{period}</span>
+    </p>
+    <div class="mt-2.5 text-[15px] text-muted">
+      <slot name="note" />
+    </div>
+    <ul class="mt-[26px] mb-[30px]">
+      {features.map((f) => (
+        <CheckItem included={f.included}>{f.text}</CheckItem>
+      ))}
+    </ul>
+    <Button href={href} variant={featured ? 'primary' : 'outline'} block class="mt-auto">
+      {cta}
+    </Button>
+  </div>
+</article>

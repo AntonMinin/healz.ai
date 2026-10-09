@@ -1,0 +1,23 @@
+---
+export type TagTone = 'ai' | 'doctor' | 'neutral' | 'sand' | 'ink';
+
+interface Props {
+  tone?: TagTone;
+}
+
+const { tone = 'neutral' } = Astro.props;
+
+const tones: Record<TagTone, string> = {
+  ai: 'bg-lime-soft',
+  doctor: 'bg-maroon-tint text-maroon',
+  neutral: 'bg-chip',
+  sand: 'bg-control',
+  ink: 'bg-ink text-white',
+};
+---
+
+<span
+  class:list={['inline-block rounded-full px-3 py-[5px] text-[13px] leading-tight', tones[tone]]}
+>
+  <slot />
+</span>

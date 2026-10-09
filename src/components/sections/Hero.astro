@@ -1,0 +1,42 @@
+---
+import { LuBookOpen, LuPaperclip, LuPiggyBank, LuStethoscope } from 'react-icons/lu';
+
+import { site } from '@/config/site';
+
+import Button from '../ui/Button.astro';
+import Container from '../ui/Container.astro';
+import Heading from '../ui/Heading.astro';
+import Highlight from '../ui/Highlight.astro';
+import IconListItem from '../ui/IconListItem.astro';
+---
+
+<section id="top" class="bg-white" aria-labelledby="hero-title">
+  <Container class="grid grid-fit-460 items-start gap-x-24 gap-y-9 pt-[clamp(32px,4.5vw,56px)] pb-[clamp(40px,5vw,64px)]">
+    <div>
+      <Heading as="h1" size="display" id="hero-title">
+        <Highlight>Cancer is beatable.</Highlight> Get the right plan for yours
+      </Heading>
+      <div class="mt-8 flex flex-wrap gap-2.5">
+        <Button href={site.links.app}>Get my next steps</Button>
+        <Button href={site.links.app} variant="outline">
+          <LuPaperclip className="size-4" strokeWidth={2} aria-hidden="true" />
+          Add labs &amp; scans
+        </Button>
+      </div>
+    </div>
+    <ul class="max-w-[380px]">
+      <IconListItem icon={LuBookOpen}>
+        <strong class="font-semibold text-maroon">Guides you through cancer</strong> by the world's
+        latest guidelines
+      </IconListItem>
+      <IconListItem icon={LuStethoscope}>
+        <strong class="font-semibold text-maroon">Connects you</strong> with the world's top
+        oncologists
+      </IconListItem>
+      <IconListItem icon={LuPiggyBank}>
+        <strong class="font-semibold text-maroon">Saves your money</strong> from treatments that
+        won't work. Sometimes $100k.
+      </IconListItem>
+    </ul>
+  </Container>
+</section>

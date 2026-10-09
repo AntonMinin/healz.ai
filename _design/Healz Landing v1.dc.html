@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&amp;display=swap">
+<style>html{scroll-behavior:smooth}body{margin:0;background:#FBF8F5;color:#1E1519;font-family:'DM Sans',system-ui,sans-serif;font-size:16px;-webkit-font-smoothing:antialiased;text-wrap:pretty}*{box-sizing:border-box}h1,h2,h3,h4,p,figure,ul{margin:0}ul{padding:0;list-style:none}a{color:#6A042C;text-decoration:none}a:hover{color:#1E1519}button,input,textarea{font-family:inherit}::selection{background:#E4FB3F;color:#1E1519}:focus-visible{outline:2px solid #6A042C;outline-offset:2px}input::placeholder,textarea::placeholder{color:#8A7E82}</style>
+</helmet>
+<div style="background:#FBF8F5; min-height:100vh;">
+
+<sc-if value="{{ showPromo }}" hint-placeholder-val="{{ true }}">
+<a href="#pricing" style="display:flex; justify-content:center; align-items:center; flex-wrap:wrap; gap:4px 10px; padding:10px 20px; background:#6A042C; color:#FFFFFF; font-size:14px; line-height:1.4; text-align:center;" style-hover="color:#FFFFFF;">
+<span>Limited-time offer: save 40% on the annual plan.</span>
+<span style="color:#E4FB3F; font-weight:600; text-decoration:underline; text-underline-offset:3px;">See plans</span>
+</a>
+</sc-if>
+
+<header data-screen-label="00 Nav" style="background:#FBF8F5;">
+<div style="max-width:1200px; margin:0 auto; padding:0 clamp(20px,4vw,40px); height:72px; display:flex; align-items:center; gap:clamp(12px,2vw,24px);">
+<a href="#top" style="display:block; margin-right:auto;"><img src="https://healz.ai/logos/healz-logo.svg" alt="Healz" style="height:26px; width:auto; display:block;"></a>
+<a href="#" style="font-size:15px; font-weight:500; color:#1E1519;" style-hover="color:#6A042C;">Log in</a>
+<a href="#start" style="display:inline-flex; align-items:center; height:42px; padding:0 18px; border-radius:999px; background:#E4FB3F; color:#1E1519; font-weight:600; font-size:15px; white-space:nowrap;" style-hover="background:#D4EE1C; color:#1E1519;">Get my next steps</a>
+</div>
+</header>
+
+<section id="top" data-screen-label="01 Hero" style="padding:clamp(20px,4vw,48px) 0 0;">
+<div style="max-width:1200px; margin:0 auto; padding:0 clamp(20px,4vw,40px);">
+<div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 440px), 1fr)); gap:32px 72px; align-items:end;">
+<div>
+<h1 style="font-size:clamp(40px,5.2vw,68px); line-height:1.04; letter-spacing:-0.035em; font-weight:500;"><span style="background:#E4FB3F; padding:0 10px; margin-left:-10px; -webkit-box-decoration-break:clone; box-decoration-break:clone;">Cancer is beatable.</span><br>Get the right plan for yours</h1>
+<p style="margin-top:22px; font-size:clamp(17px,1.5vw,19px); line-height:1.5; color:#5E5357; max-width:520px;">Frontier cancer-trained AI and top board-certified oncologists guide you from diagnosis to recovery, all in one chat.</p>
+<div style="display:flex; flex-wrap:wrap; gap:12px; margin-top:28px;">
+<a href="#start" style="display:inline-flex; align-items:center; gap:10px; height:54px; padding:0 26px; border-radius:999px; background:#E4FB3F; color:#1E1519; font-weight:600; font-size:16px;" style-hover="background:#D4EE1C; color:#1E1519;">Get my next steps<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
+<a href="#start" style="display:inline-flex; align-items:center; gap:10px; height:54px; padding:0 24px; border-radius:999px; border:1.5px solid #1E1519; color:#1E1519; font-weight:600; font-size:16px;" style-hover="background:#1E1519; color:#FFFFFF;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.44 11.05-9.19 9.19a6 6 0 0 1-8.49-8.49l8.57-8.57A4 4 0 1 1 18 8.84l-8.59 8.57a2 2 0 0 1-2.83-2.83l8.49-8.48"></path></svg>Add labs &amp; scans</a>
+</div>
+</div>
+<ul style="display:grid; gap:16px; padding-bottom:6px;">
+<li style="display:flex; gap:14px; align-items:flex-start; font-size:18px; line-height:1.45;"><span style="flex:none; width:26px; height:26px; border-radius:50%; background:#6A042C; color:#E4FB3F; display:grid; place-items:center; margin-top:1px;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg></span><span><strong style="font-weight:600; color:#6A042C;">Guides you through cancer</strong> by the world's latest guidelines</span></li>
+<li style="display:flex; gap:14px; align-items:flex-start; font-size:18px; line-height:1.45;"><span style="flex:none; width:26px; height:26px; border-radius:50%; background:#6A042C; color:#E4FB3F; display:grid; place-items:center; margin-top:1px;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg></span><span><strong style="font-weight:600; color:#6A042C;">Connects you</strong> with the world's top oncologists</span></li>
+<li style="display:flex; gap:14px; align-items:flex-start; font-size:18px; line-height:1.45;"><span style="flex:none; width:26px; height:26px; border-radius:50%; background:#6A042C; color:#E4FB3F; display:grid; place-items:center; margin-top:1px;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg></span><span><strong style="font-weight:600; color:#6A042C;">Saves your money</strong> from treatments that won't work. Sometimes $100k.</span></li>
+</ul>
+</div>
+
+<div style="display:flex; gap:16px; overflow-x:auto; scroll-snap-type:x mandatory; margin-top:clamp(36px,5vw,56px); scrollbar-width:none;">
+<figure style="flex:1 0 280px; scroll-snap-align:start;">
+<div style="height:clamp(260px,26vw,340px); border-radius:20px; overflow:hidden; background:#EDE5DE;"><img src="https://healz.ai/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fcancer-study-man.cc7ccb9b.jpeg&amp;w=1920&amp;q=75&amp;dpl=0e2382919d063fcbd31728554e6ae4c373dcd8e7" alt="" style="width:100%; height:100%; object-fit:cover; object-position:60% 30%; display:block;"></div>
+<figcaption style="display:flex; gap:10px; align-items:center; margin-top:14px; font-size:15px; line-height:1.35;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6A042C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex:none;"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>For patients and their caregivers</figcaption>
+</figure>
+<figure style="flex:1 0 280px; scroll-snap-align:start;">
+<div style="height:clamp(260px,26vw,340px); border-radius:20px; overflow:hidden; background:#E4FB3F; padding:20px; display:flex; flex-direction:column; justify-content:flex-end; gap:10px;">
+<div style="align-self:flex-end; max-width:82%; background:#1E1519; color:#FFFFFF; padding:10px 14px; border-radius:16px 16px 4px 16px; font-size:14px; line-height:1.4;">Is my chemo plan right?</div>
+<div style="max-width:92%; background:#FFFFFF; padding:12px 14px; border-radius:16px 16px 16px 4px; font-size:14px; line-height:1.45;"><div style="font-size:12px; font-weight:600; color:#6A042C; margin-bottom:4px;">Healz</div>The plan is FOLFOX for stage III colon cancer. The pathology report has no MMR/MSI result. It can change the options, so I propose testing before cycle 1.</div>
+</div>
+<figcaption style="display:flex; gap:10px; align-items:center; margin-top:14px; font-size:15px; line-height:1.35;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6A042C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex:none;"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"></path></svg>AI trained on 40M+ cancer studies</figcaption>
+</figure>
+<figure style="flex:1 0 280px; scroll-snap-align:start;">
+<div style="position:relative; height:clamp(260px,26vw,340px); border-radius:20px; overflow:hidden; background:#EDE5DE;"><img src="https://healz.ai/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fdoctor-albino.eadf8ad6.jpg&amp;w=1920&amp;q=75&amp;dpl=0e2382919d063fcbd31728554e6ae4c373dcd8e7" alt="Dr. Miguel Albino" style="width:100%; height:100%; object-fit:cover; object-position:50% 20%; display:block;">
+<div style="position:absolute; left:14px; bottom:14px; right:14px; display:flex; align-items:center; gap:8px; background:#FFFFFF; border-radius:999px; padding:8px 14px 8px 10px; font-size:13px; line-height:1.3; width:max-content; max-width:calc(100% - 28px);"><span style="width:8px; height:8px; border-radius:50%; background:#3FA34D; flex:none;"></span><span><strong style="font-weight:600;">Dr. Miguel Albino</strong> joined your chat</span></div>
+</div>
+<figcaption style="display:flex; gap:10px; align-items:center; margin-top:14px; font-size:15px; line-height:1.35;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6A042C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex:none;"><path d="M11 2v2"></path><path d="M5 2v2"></path><path d="M5 3H4a2 2 0 0 0-2 2v4a6 6 0 0 0 12 0V5a2 2 0 0 0-2-2h-1"></path><path d="M8 15a6 6 0 0 0 12 0v-3"></path><circle cx="20" cy="10" r="2"></circle></svg>Top oncologists in your chat for 7 days</figcaption>
+</figure>
+</div>
+<p style="margin-top:28px; padding-top:16px; border-top:1px solid #E7DFD9; font-size:13px; line-height:1.5; color:#6B5F63;"><strong style="color:#1E1519; font-weight:600;">Not a medical provider.</strong> Healz.ai is an educational service. Always discuss every decision with your doctor. AI can make mistakes. <a href="#important" style="color:#6A042C; text-decoration:underline; text-underline-offset:2px;">Important information</a></p>
+</div>
+</section>
+
+<section id="start" data-screen-label="02 Where are you" style="padding:clamp(56px,8vw,104px) 0; scroll-margin-top:64px;">
+<div style="max-width:1200px; margin:0 auto; padding:0 clamp(20px,4vw,40px); display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap:40px 72px; align-items:center;">
+<div>
+<div style="font-size:clamp(96px,13vw,184px); line-height:0.88; letter-spacing:-0.06em; font-weight:500; color:#6A042C;">40M+</div>
+<p style="margin-top:22px; font-size:clamp(20px,2vw,26px); line-height:1.3; letter-spacing:-0.01em; max-width:460px;">cancer studies behind Healz, plus top board-certified oncologists. All in one chat.</p>
+<p style="margin-top:14px; font-size:15px; line-height:1.5; color:#6B5F63; max-width:440px;">For patients and their caregivers. Healz guides you through every step, so you make the best decisions and avoid costly mistakes.</p>
+</div>
+<div style="background:#FFFFFF; border:1px solid #EEE6E0; border-radius:24px; padding:clamp(20px,3vw,32px); box-shadow:0 24px 48px -32px rgba(60,20,35,0.25);">
+<h3 style="font-size:20px; line-height:1.3; font-weight:600; letter-spacing:-0.01em;">Where are you right now?</h3>
+<div style="display:flex; flex-wrap:wrap; gap:8px; margin-top:16px;">
+<sc-for list="{{ stages }}" as="st" hint-placeholder-count="4">
+<button type="button" onClick="{{ st.select }}" style="height:40px; padding:0 16px; border-radius:999px; border:1px solid {{ st.bd }}; background:{{ st.bg }}; color:{{ st.fg }}; font-size:14px; font-weight:500; cursor:pointer;">{{ st.label }}</button>
+</sc-for>
+</div>
+<p style="margin-top:24px; padding-top:20px; border-top:1px solid #EEE6E0; font-size:13px; font-weight:600; color:#6B5F63;">Healz will help you</p>
+<ol style="margin:12px 0 0; padding:0; list-style:none; display:grid; gap:14px;">
+<sc-for list="{{ stageItems }}" as="it" hint-placeholder-count="3">
+<li style="display:flex; gap:12px; align-items:flex-start;"><span style="flex:none; width:24px; height:24px; border-radius:50%; background:#E4FB3F; display:grid; place-items:center; font-size:12px; font-weight:600; margin-top:1px;">{{ it.n }}</span><span style="font-size:15px; line-height:1.45;"><strong style="font-weight:600;">{{ it.t }}</strong><br><span style="color:#6B5F63;">{{ it.d }}</span></span></li>
+</sc-for>
+</ol>
+<div style="margin-top:22px; border:1px solid #E0D6CF; border-radius:18px; padding:14px; background:#FBF8F5;">
+<textarea rows="2" placeholder="Tell me your diagnosis, where you are in treatment and what worries you most. Upload your reports and scans." style="width:100%; border:0; background:transparent; resize:none; font-size:15px; line-height:1.45; color:#1E1519; outline:none;"></textarea>
+<div style="display:flex; align-items:center; justify-content:space-between; gap:8px; flex-wrap:wrap; margin-top:8px;">
+<span style="display:inline-flex; align-items:center; gap:6px; font-size:13px; font-weight:500; padding:6px 12px; border-radius:999px; border:1px solid #E0D6CF; background:#FFFFFF;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.44 11.05-9.19 9.19a6 6 0 0 1-8.49-8.49l8.57-8.57A4 4 0 1 1 18 8.84l-8.59 8.57a2 2 0 0 1-2.83-2.83l8.49-8.48"></path></svg>Add labs &amp; scans</span>
+<a href="#" style="display:inline-flex; align-items:center; gap:8px; height:42px; padding:0 18px; border-radius:999px; background:#E4FB3F; color:#1E1519; font-weight:600; font-size:15px;" style-hover="background:#D4EE1C; color:#1E1519;">Get my next steps<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
+</div>
+</div>
+<p style="margin-top:14px; font-size:13px; line-height:1.5; color:#6B5F63;">A top oncologist can join your chat within 24 hours, sometimes longer.</p>
+</div>
+</div>
+</section>
+
+<nav data-screen-label="Sub-nav" style="position:sticky; top:0; z-index:30; background:rgba(251,248,245,0.94); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); border-top:1px solid #E7DFD9; border-bottom:1px solid #E7DFD9;">
+<div style="max-width:1200px; margin:0 auto; padding:0 clamp(20px,4vw,40px); height:56px; display:flex; align-items:center; gap:28px; overflow-x:auto; white-space:nowrap; scrollbar-width:none; font-size:15px; font-weight:500;">
+<a href="#features" style="color:#1E1519;" style-hover="color:#6A042C;">What Healz does</a>
+<a href="#how" style="color:#1E1519;" style-hover="color:#6A042C;">How it works</a>
+<a href="#pricing" style="color:#1E1519;" style-hover="color:#6A042C;">Pricing</a>
+<a href="#doctors" style="color:#1E1519;" style-hover="color:#6A042C;">Doctors</a>
+<a href="#faq" style="color:#1E1519;" style-hover="color:#6A042C;">FAQ</a>
+</div>
+</nav>
+
+<section id="features" data-screen-label="03 What Healz does" style="padding:clamp(56px,8vw,96px) 0 clamp(48px,6vw,80px); scroll-margin-top:56px;">
+<div style="max-width:1200px; margin:0 auto; padding:0 clamp(20px,4vw,40px); display:flex; align-items:flex-end; justify-content:space-between; gap:20px; flex-wrap:wrap;">
+<h2 style="font-size:clamp(30px,3.4vw,44px); line-height:1.08; letter-spacing:-0.03em; font-weight:500; max-width:640px;">Everything top‑tier, in one chat</h2>
+<div style="display:flex; gap:8px;">
+<button type="button" aria-label="Previous" onClick="{{ featPrev }}" style="width:44px; height:44px; border-radius:50%; border:1px solid #D9CFC8; background:#FFFFFF; color:#1E1519; display:grid; place-items:center; cursor:pointer;" style-hover="background:#1E1519; color:#FFFFFF;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"></path></svg></button>
+<button type="button" aria-label="Next" onClick="{{ featNext }}" style="width:44px; height:44px; border-radius:50%; border:1px solid #D9CFC8; background:#FFFFFF; color:#1E1519; display:grid; place-items:center; cursor:pointer;" style-hover="background:#1E1519; color:#FFFFFF;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg></button>
+</div>
+</div>
+<div ref="{{ featRef }}" style="display:flex; gap:16px; overflow-x:auto; scroll-snap-type:x mandatory; scrollbar-width:none; padding:28px max(clamp(20px,4vw,40px), calc((100% - 1200px) / 2 + clamp(20px,4vw,40px))) 4px; scroll-padding-left:max(clamp(20px,4vw,40px), calc((100% - 1200px) / 2 + clamp(20px,4vw,40px)));">
+
+<article style="flex:0 0 min(300px, 82vw); scroll-snap-align:start; background:#FFFFFF; border:1px solid #EEE6E0; border-radius:22px; padding:22px; display:flex; flex-direction:column; gap:12px; min-height:440px;">
+<h3 style="font-size:21px; line-height:1.2; font-weight:600; letter-spacing:-0.015em;">Personal plan</h3>
+<div style="display:flex; flex-wrap:wrap; gap:6px;"><span style="font-size:12px; font-weight:600; padding:4px 10px; border-radius:999px; background:#F1FBB5; color:#3B4200;">AI</span><span style="font-size:12px; font-weight:500; padding:4px 10px; border-radius:999px; background:#F3EDE7; color:#5E5357;">Latest guidelines</span></div>
+<p style="font-size:15px; line-height:1.45; color:#5E5357;">Guides you through cancer by the world's latest guidelines.</p>
+<div style="margin-top:auto; background:#F5F0EB; border-radius:14px; padding:14px; height:196px; display:flex; flex-direction:column; justify-content:flex-end;">
+<div style="background:#FFFFFF; border-radius:12px; padding:14px; font-size:13px; line-height:1.4;">
+<div style="font-size:11px; letter-spacing:0.05em; text-transform:uppercase; color:#6B5F63;">Your plan</div>
+<div style="font-weight:600; font-size:15px; margin-top:4px;">Stage III colon cancer</div>
+<div style="display:flex; gap:8px; align-items:flex-start; margin-top:12px;"><span style="flex:none; width:18px; height:18px; border-radius:50%; background:#6A042C; color:#E4FB3F; display:grid; place-items:center;"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg></span>FOLFOX matches the guidelines</div>
+<div style="display:flex; gap:8px; align-items:flex-start; margin-top:8px;"><span style="flex:none; width:18px; height:18px; border-radius:50%; background:#E4FB3F; color:#1E1519; display:grid; place-items:center; font-weight:700; font-size:12px;">!</span>MMR/MSI result missing. Test before cycle 1</div>
+</div>
+</div>
+</article>
+
+<article style="flex:0 0 min(300px, 82vw); scroll-snap-align:start; background:#FFFFFF; border:1px solid #EEE6E0; border-radius:22px; padding:22px; display:flex; flex-direction:column; gap:12px; min-height:440px;">
+<h3 style="font-size:21px; line-height:1.2; font-weight:600; letter-spacing:-0.015em;">Top oncologists in your chat</h3>
+<div style="display:flex; flex-wrap:wrap; gap:6px;"><span style="font-size:12px; font-weight:600; padding:4px 10px; border-radius:999px; background:#F5E6EC; color:#6A042C;">Doctor</span><span style="font-size:12px; font-weight:500; padding:4px 10px; border-radius:999px; background:#F3EDE7; color:#5E5357;">7 days</span><span style="font-size:12px; font-weight:500; padding:4px 10px; border-radius:999px; background:#F3EDE7; color:#5E5357;">Usually within 24h</span></div>
+<p style="font-size:15px; line-height:1.45; color:#5E5357;">Already knows your case and answers every question.</p>
+<div style="margin-top:auto; background:#F5F0EB; border-radius:14px; padding:14px; height:196px; display:flex; flex-direction:column; justify-content:flex-end; gap:10px;">
+<div style="display:flex; align-items:center; gap:10px;"><img src="https://healz.ai/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fdoctor-albino.eadf8ad6.jpg&amp;w=1920&amp;q=75&amp;dpl=0e2382919d063fcbd31728554e6ae4c373dcd8e7" alt="" style="width:36px; height:36px; border-radius:50%; object-fit:cover; object-position:50% 20%;"><div style="font-size:13px; line-height:1.3;"><div style="font-weight:600;">Dr. Miguel Albino</div><div style="color:#6B5F63;">Medical oncologist, joined the chat</div></div></div>
+<div style="background:#6A042C; color:#FFFFFF; border-radius:4px 14px 14px 14px; padding:10px 12px; font-size:13px; line-height:1.45;">Agree. Order MMR/MSI testing before the first cycle. If it's dMMR, we discuss adding immunotherapy.</div>
+</div>
+</article>
+
+<article style="flex:0 0 min(300px, 82vw); scroll-snap-align:start; background:#FFFFFF; border:1px solid #EEE6E0; border-radius:22px; padding:22px; display:flex; flex-direction:column; gap:12px; min-height:440px;">
+<h3 style="font-size:21px; line-height:1.2; font-weight:600; letter-spacing:-0.015em;">Contacts hospitals for you</h3>
+<div style="display:flex; flex-wrap:wrap; gap:6px;"><span style="font-size:12px; font-weight:600; padding:4px 10px; border-radius:999px; background:#F1FBB5; color:#3B4200;">AI</span><span style="font-size:12px; font-weight:500; padding:4px 10px; border-radius:999px; background:#F3EDE7; color:#5E5357;">Hospitals &amp; insurers</span></div>
+<p style="font-size:15px; line-height:1.45; color:#5E5357;">Drafts the email to a top cancer center, you tap send.</p>
+<div style="margin-top:auto; background:#F5F0EB; border-radius:14px; padding:14px; height:196px; display:flex; flex-direction:column; justify-content:flex-end;">
+<div style="background:#FFFFFF; border-radius:12px; padding:14px; font-size:13px; line-height:1.4;">
+<div style="color:#6B5F63; font-size:12px; padding-bottom:8px; border-bottom:1px solid #EEE6E0;">To: New patient office</div>
+<div style="font-weight:600; margin-top:8px;">Second opinion request</div>
+<div style="height:6px; border-radius:3px; background:#EDE6E0; margin-top:10px;"></div>
+<div style="height:6px; border-radius:3px; background:#EDE6E0; margin-top:6px; width:88%;"></div>
+<div style="height:6px; border-radius:3px; background:#EDE6E0; margin-top:6px; width:64%;"></div>
+<div style="display:flex; justify-content:flex-end; margin-top:12px;"><span style="display:inline-flex; align-items:center; gap:6px; height:30px; padding:0 14px; border-radius:999px; background:#E4FB3F; font-weight:600; font-size:13px;">Send<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 7-7 7 7"></path><path d="M12 19V5"></path></svg></span></div>
+</div>
+</div>
+</article>
+
+<article style="flex:0 0 min(300px, 82vw); scroll-snap-align:start; background:#FFFFFF; border:1px solid #EEE6E0; border-radius:22px; padding:22px; display:flex; flex-direction:column; gap:12px; min-height:440px;">
+<h3 style="font-size:21px; line-height:1.2; font-weight:600; letter-spacing:-0.015em;">Finds trials that fit you</h3>
+<div style="display:flex; flex-wrap:wrap; gap:6px;"><span style="font-size:12px; font-weight:600; padding:4px 10px; border-radius:999px; background:#F1FBB5; color:#3B4200;">AI</span><span style="font-size:12px; font-weight:500; padding:4px 10px; border-radius:999px; background:#F3EDE7; color:#5E5357;">Near home</span></div>
+<p style="font-size:15px; line-height:1.45; color:#5E5357;">Open trials near home that match the biopsy.</p>
+<div style="margin-top:auto; background:#F5F0EB; border-radius:14px; padding:14px; height:196px; display:flex; flex-direction:column; justify-content:flex-end; gap:8px;">
+<div style="background:#FFFFFF; border-radius:12px; padding:12px 14px; font-size:13px; line-height:1.35; display:flex; justify-content:space-between; gap:10px; align-items:center;"><div><div style="font-weight:600;">Phase II · Immunotherapy</div><div style="color:#6B5F63;">12 mi from home · Enrolling</div></div><span style="flex:none; font-size:11px; font-weight:600; padding:4px 8px; border-radius:999px; background:#E4FB3F;">Match</span></div>
+<div style="background:#FFFFFF; border-radius:12px; padding:12px 14px; font-size:13px; line-height:1.35; display:flex; justify-content:space-between; gap:10px; align-items:center;"><div><div style="font-weight:600;">Phase III · Targeted therapy</div><div style="color:#6B5F63;">30 mi from home · Enrolling</div></div><span style="flex:none; font-size:11px; font-weight:600; padding:4px 8px; border-radius:999px; background:#E4FB3F;">Match</span></div>
+</div>
+</article>
+
+<article style="flex:0 0 min(300px, 82vw); scroll-snap-align:start; background:#FFFFFF; border:1px solid #EEE6E0; border-radius:22px; padding:22px; display:flex; flex-direction:column; gap:12px; min-height:440px;">
+<h3 style="font-size:21px; line-height:1.2; font-weight:600; letter-spacing:-0.015em;">Checks every report</h3>
+<div style="display:flex; flex-wrap:wrap; gap:6px;"><span style="font-size:12px; font-weight:600; padding:4px 10px; border-radius:999px; background:#F1FBB5; color:#3B4200;">AI</span><span style="font-size:12px; font-weight:500; padding:4px 10px; border-radius:999px; background:#F3EDE7; color:#5E5357;">Labs, scans, docs</span></div>
+<p style="font-size:15px; line-height:1.45; color:#5E5357;">Every report from every doctor, checked for mistakes and explained.</p>
+<div style="margin-top:auto; background:#F5F0EB; border-radius:14px; padding:14px; height:196px; display:flex; flex-direction:column; justify-content:flex-end; gap:8px;">
+<div style="background:#FFFFFF; border-radius:12px; padding:14px; font-size:13px; line-height:1.5;">
+<div style="font-size:11px; letter-spacing:0.05em; text-transform:uppercase; color:#6B5F63;">CT chest · Report</div>
+<div style="margin-top:6px;">…the nodule appears <span style="background:#E4FB3F; padding:0 3px;">cavitating</span>, <span style="background:#E4FB3F; padding:0 3px;">likely metastatic</span>…</div>
+</div>
+<div style="display:flex; align-items:center; gap:8px; font-size:13px; font-weight:600; color:#6A042C;">Explained in plain words<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></div>
+</div>
+</article>
+
+<article style="flex:0 0 min(300px, 82vw); scroll-snap-align:start; background:#FFFFFF; border:1px solid #EEE6E0; border-radius:22px; padding:22px; display:flex; flex-direction:column; gap:12px; min-height:440px;">
+<h3 style="font-size:21px; line-height:1.2; font-weight:600; letter-spacing:-0.015em;">Saves your money</h3>
+<div style="display:flex; flex-wrap:wrap; gap:6px;"><span style="font-size:12px; font-weight:600; padding:4px 10px; border-radius:999px; background:#F1FBB5; color:#3B4200;">AI</span><span style="font-size:12px; font-weight:600; padding:4px 10px; border-radius:999px; background:#F5E6EC; color:#6A042C;">Doctor</span></div>
+<p style="font-size:15px; line-height:1.45; color:#5E5357;">On treatments that won't work.</p>
+<div style="margin-top:auto; background:#E4FB3F; border-radius:14px; padding:18px; height:196px; display:flex; flex-direction:column; justify-content:flex-end;">
+<div style="font-size:13px; font-weight:600;">Sometimes</div>
+<div style="font-size:72px; line-height:0.95; letter-spacing:-0.05em; font-weight:500; color:#6A042C;">$100k</div>
+</div>
+</article>
+
+</div>
+</section>
+
+<section id="how" data-screen-label="04 How it works" style="padding-bottom:clamp(56px,8vw,104px); scroll-margin-top:56px;">
+<div style="height:clamp(340px,44vw,600px); overflow:hidden; background:#C9B9A6;"><img src="https://healz.ai/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Ffinish-hike-wide.ce502b52.jpg&amp;w=1920&amp;q=75&amp;dpl=0e2382919d063fcbd31728554e6ae4c373dcd8e7" alt="A man back to hiking after cancer treatment" style="width:100%; height:100%; object-fit:cover; object-position:72% 35%; display:block;"></div>
+<div style="max-width:1200px; margin:clamp(-200px,-13vw,-80px) auto 0; padding:0 clamp(20px,4vw,40px); position:relative;">
+<div style="background:#FFFFFF; border-radius:28px; padding:clamp(24px,4vw,56px); display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap:32px 72px; box-shadow:0 30px 60px -40px rgba(60,20,35,0.35);">
+<div>
+<h2 style="font-size:clamp(30px,3.4vw,44px); line-height:1.08; letter-spacing:-0.03em; font-weight:500;">Take control of every step to beat cancer</h2>
+<p style="margin-top:16px; font-size:17px; line-height:1.5; color:#5E5357; max-width:440px;">People get back to running, traveling and enjoying life. You can too. Modern medicine works. Take the next step today.</p>
+<a href="#start" style="display:inline-flex; align-items:center; gap:10px; height:52px; padding:0 24px; border-radius:999px; background:#E4FB3F; color:#1E1519; font-weight:600; font-size:16px; margin-top:28px;" style-hover="background:#D4EE1C; color:#1E1519;">Get my next steps<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
+</div>
+<div>
+<p style="font-size:14px; font-weight:600; color:#6B5F63; padding-bottom:10px;">From diagnosis to recovery, in 6 steps</p>
+<sc-for list="{{ steps }}" as="s" hint-placeholder-count="6">
+<div style="border-top:1px solid #E7DFD9;">
+<button type="button" onClick="{{ s.toggle }}" style="width:100%; display:flex; align-items:center; gap:14px; padding:18px 0; background:none; border:0; cursor:pointer; text-align:left; color:#1E1519;">
+<span style="flex:none; width:30px; height:30px; border-radius:50%; border:1px solid {{ s.numBd }}; background:{{ s.numBg }}; display:grid; place-items:center; font-size:13px; font-weight:600;">{{ s.n }}</span>
+<span style="flex:1; font-size:18px; line-height:1.3; font-weight:500; letter-spacing:-0.01em;">{{ s.title }}</span>
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex:none; transition:transform .2s; transform:rotate({{ s.rot }}deg);"><path d="m6 9 6 6 6-6"></path></svg>
+</button>
+<sc-if value="{{ s.open }}" hint-placeholder-val="{{ false }}">
+<div style="padding:0 0 22px 44px;">
+<sc-if value="{{ s.hasBadge }}" hint-placeholder-val="{{ false }}"><span style="display:inline-block; font-size:12px; font-weight:600; padding:4px 10px; border-radius:999px; background:#E4FB3F; margin-bottom:10px;">The step that changes outcomes</span></sc-if>
+<p style="font-size:16px; line-height:1.5; color:#5E5357;">{{ s.desc }}</p>
+<sc-if value="{{ s.hasForm }}" hint-placeholder-val="{{ false }}">
+<div style="margin-top:14px; background:#F5F0EB; border-radius:16px; padding:16px;">
+<p style="font-size:14px; line-height:1.45;">I've been told to wait weeks. Find me an earlier appointment.</p>
+<div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(140px, 1fr)); gap:8px; margin-top:12px;">
+<label style="display:flex; flex-direction:column; gap:4px; font-size:12px; color:#6B5F63;">What I need<input placeholder="MRI, biopsy, oncologist visit" style="height:40px; border:1px solid #E0D6CF; border-radius:10px; padding:0 12px; font-size:14px; background:#FFFFFF; color:#1E1519;"></label>
+<label style="display:flex; flex-direction:column; gap:4px; font-size:12px; color:#6B5F63;">City or ZIP<input placeholder="Austin, TX" style="height:40px; border:1px solid #E0D6CF; border-radius:10px; padding:0 12px; font-size:14px; background:#FFFFFF; color:#1E1519;"></label>
+</div>
+<div style="display:flex; justify-content:flex-end; margin-top:12px;"><a href="#" style="display:inline-flex; align-items:center; gap:8px; height:38px; padding:0 16px; border-radius:999px; background:#E4FB3F; color:#1E1519; font-weight:600; font-size:14px;" style-hover="background:#D4EE1C; color:#1E1519;">Find it sooner<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a></div>
+</div>
+</sc-if>
+</div>
+</sc-if>
+</div>
+</sc-for>
+</div>
+</div>
+</div>
+</section>
+
+<section data-screen-label="05 Press" style="background:#6A042C; color:#FFFFFF; padding:clamp(56px,8vw,104px) 0;">
+<div style="max-width:1200px; margin:0 auto; padding:0 clamp(20px,4vw,40px); display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap:40px 72px; align-items:center;">
+<div>
+<p style="font-size:14px; font-weight:600; color:#E4FB3F;">Featured in Business Insider</p>
+<h2 style="margin-top:16px; font-size:clamp(32px,3.8vw,50px); line-height:1.06; letter-spacing:-0.03em; font-weight:500; color:#FFFFFF;">This husband used Healz.ai to save his wife from cancer.</h2>
+<a href="https://www.businessinsider.com/ai-healthcare-cancer-startup-doctor-wife-diagnosis-treatment-invested-2026-9" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:10px; height:52px; padding:0 24px; border-radius:999px; border:1.5px solid #FFFFFF; color:#FFFFFF; font-weight:600; font-size:16px; margin-top:28px;" style-hover="background:#FFFFFF; color:#6A042C;">Read the story<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></a>
+<div style="margin-top:48px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.22);">
+<p style="font-size:13px; color:rgba(255,255,255,0.78);">Featured in</p>
+<div style="display:flex; flex-wrap:wrap; gap:10px 28px; margin-top:12px; font-size:17px; font-weight:600; letter-spacing:-0.01em; color:#FFFFFF;">
+<span>Business Insider</span><span>Yahoo Finance</span><span>Tech News</span><span>HyperAI</span><span>Jingletree</span>
+</div>
+</div>
+</div>
+<figure style="border-radius:24px; overflow:hidden; aspect-ratio:4 / 3; background:#4E0320;"><img src="https://healz.ai/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fpress-shroff.34e95416.jpg&amp;w=1920&amp;q=75&amp;dpl=0e2382919d063fcbd31728554e6ae4c373dcd8e7" alt="A husband and his wife" style="width:100%; height:100%; object-fit:cover; display:block;"></figure>
+</div>
+</section>
+
+<sc-if value="{{ showQuotes }}" hint-placeholder-val="{{ true }}">
+<section data-screen-label="06 Real families" style="background:#F3EDE7; padding:clamp(56px,8vw,104px) 0;">
+<div style="max-width:1200px; margin:0 auto; padding:0 clamp(20px,4vw,40px); display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap:32px 72px; align-items:end;">
+<div>
+<h2 style="font-size:clamp(30px,3.4vw,44px); line-height:1.08; letter-spacing:-0.03em; font-weight:500;">Real families, real decisions</h2>
+<p style="margin-top:14px; font-size:17px; line-height:1.5; color:#5E5357;">Patients and caregivers on what Healz told them.</p>
+</div>
+<ul style="display:grid; gap:12px;">
+<li style="display:flex; gap:12px; align-items:baseline; font-size:16px; line-height:1.45;"><strong style="font-weight:600; color:#6A042C; min-width:64px;">40M+</strong><span>cancer studies behind the AI</span></li>
+<li style="display:flex; gap:12px; align-items:baseline; font-size:16px; line-height:1.45;"><strong style="font-weight:600; color:#6A042C; min-width:64px;">170+</strong><span>doctors from leading hospitals</span></li>
+<li style="display:flex; gap:12px; align-items:baseline; font-size:16px; line-height:1.45;"><strong style="font-weight:600; color:#6A042C; min-width:64px;">24h</strong><span>for a top doctor to join your chat, sometimes longer</span></li>
+</ul>
+</div>
+<div ref="{{ quoteRef }}" style="display:flex; gap:16px; overflow-x:auto; scroll-snap-type:x mandatory; scrollbar-width:none; padding:36px max(clamp(20px,4vw,40px), calc((100% - 1200px) / 2 + clamp(20px,4vw,40px))) 4px; scroll-padding-left:max(clamp(20px,4vw,40px), calc((100% - 1200px) / 2 + clamp(20px,4vw,40px)));">
+<sc-for list="{{ quotes }}" as="q" hint-placeholder-count="5">
+<figure style="flex:0 0 min(340px, 84vw); scroll-snap-align:start; background:#FFFFFF; border-radius:22px; padding:24px; display:flex; flex-direction:column; gap:16px; min-height:300px;">
+<span style="align-self:flex-start; font-size:12px; font-weight:600; padding:5px 11px; border-radius:999px; background:#E4FB3F;">{{ q.tag }}</span>
+<blockquote style="margin:0; font-size:19px; line-height:1.4; letter-spacing:-0.01em;">“{{ q.text }}”</blockquote>
+<figcaption style="margin-top:auto; font-size:14px; line-height:1.45; color:#6B5F63;">{{ q.who }}</figcaption>
+</figure>
+</sc-for>
+</div>
+<div style="max-width:1200px; margin:20px auto 0; padding:0 clamp(20px,4vw,40px); display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap;">
+<p style="font-size:13px; color:#6B5F63;">Quotes from Healz patients and caregivers, shortened.</p>
+<div style="display:flex; gap:8px;">
+<button type="button" aria-label="Previous" onClick="{{ quotePrev }}" style="width:44px; height:44px; border-radius:50%; border:1px solid #D9CFC8; background:#FFFFFF; color:#1E1519; display:grid; place-items:center; cursor:pointer;" style-hover="background:#1E1519; color:#FFFFFF;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"></path></svg></button>
+<button type="button" aria-label="Next" onClick="{{ quoteNext }}" style="width:44px; height:44px; border-radius:50%; border:1px solid #D9CFC8; background:#FFFFFF; color:#1E1519; display:grid; place-items:center; cursor:pointer;" style-hover="background:#1E1519; color:#FFFFFF;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg></button>
+</div>
+</div>
+</section>
+</sc-if>
+
+<sc-if value="{{ showCompare }}" hint-placeholder-val="{{ true }}">
+<section data-screen-label="07 Healz vs general AI" style="padding:clamp(56px,8vw,104px) 0;">
+<div style="max-width:1200px; margin:0 auto; padding:0 clamp(20px,4vw,40px); display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 360px), 1fr)); gap:40px 72px; align-items:start;">
+<div>
+<h2 style="font-size:clamp(30px,3.4vw,44px); line-height:1.08; letter-spacing:-0.03em; font-weight:500;">Why cancer patients switch from GPT to Healz</h2>
+<figure style="margin-top:32px; padding:24px; border-radius:22px; background:#F5E6EC;">
+<blockquote style="margin:0; font-size:20px; line-height:1.4; letter-spacing:-0.01em; color:#4A031F;">“I'm using ChatGPT, Gemini, Claude, Perplexity... I have gone to Healz now more frequently first.”</blockquote>
+<figcaption style="margin-top:14px; font-size:14px; color:#6A042C;">A husband, 78, caring for his wife</figcaption>
+</figure>
+</div>
+<div>
+<sc-for list="{{ compare }}" as="c" hint-placeholder-count="5">
+<div style="padding:18px 0; border-top:1px solid #E7DFD9;">
+<p style="font-size:13px; font-weight:600; color:#6B5F63;">{{ c.label }}</p>
+<div style="display:flex; flex-wrap:wrap; gap:10px; margin-top:10px;">
+<div style="flex:1 1 220px; background:#FFFFFF; border:1px solid #EEE6E0; border-radius:14px; padding:12px 14px; display:flex; gap:10px; align-items:flex-start; font-size:15px; line-height:1.4;"><span style="flex:none; width:20px; height:20px; border-radius:50%; background:#6A042C; color:#E4FB3F; display:grid; place-items:center; margin-top:1px;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg></span><span><strong style="font-weight:600;">Healz.</strong> {{ c.healz }}</span></div>
+<div style="flex:1 1 220px; border-radius:14px; padding:12px 14px; display:flex; gap:10px; align-items:flex-start; font-size:15px; line-height:1.4; color:#6B5F63;"><span style="flex:none; width:20px; height:20px; border-radius:50%; border:1px solid #CFC4BD; display:grid; place-items:center; margin-top:1px;"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg></span><span><strong style="font-weight:600;">General AI.</strong> {{ c.other }}</span></div>
+</div>
+</div>
+</sc-for>
+</div>
+</div>
+</section>
+</sc-if>
+
+<section id="included" data-screen-label="08 What's included" style="padding:clamp(56px,8vw,104px) 0; border-top:1px solid #E7DFD9; scroll-margin-top:56px;">
+<div style="max-width:1200px; margin:0 auto; padding:0 clamp(20px,4vw,40px); display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap:48px 72px; align-items:center;">
+<div style="background:#E4FB3F; border-radius:28px; padding:clamp(28px,4vw,48px) 20px 0; display:flex; justify-content:center; overflow:hidden; height:clamp(460px,44vw,560px);">
+<div style="width:300px; flex:none; background:#FFFFFF; border:10px solid #1E1519; border-bottom:0; border-radius:44px 44px 0 0; padding:18px 14px 0; display:flex; flex-direction:column; gap:10px; box-shadow:0 30px 60px -30px rgba(40,10,20,0.45);">
+<div style="display:flex; align-items:center; gap:10px; padding-bottom:10px; border-bottom:1px solid #EEE6E0;">
+<div style="flex:1;"><div style="font-size:14px; font-weight:600;">Chemo plan review</div><div style="font-size:11px; color:#6B5F63;">Healz · Dr. Miguel Albino · Alex</div></div>
+<img src="https://healz.ai/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fdoctor-albino.eadf8ad6.jpg&amp;w=1920&amp;q=75&amp;dpl=0e2382919d063fcbd31728554e6ae4c373dcd8e7" alt="" style="width:28px; height:28px; border-radius:50%; object-fit:cover; object-position:50% 20%;">
+</div>
+<div style="align-self:flex-end; max-width:86%; background:#1E1519; color:#FFFFFF; padding:9px 12px; border-radius:14px 14px 4px 14px; font-size:12.5px; line-height:1.4;">@healz ask your doctor if my chemo plan is right</div>
+<div style="max-width:92%; background:#F5F0EB; padding:10px 12px; border-radius:14px 14px 14px 4px; font-size:12.5px; line-height:1.45;"><div style="font-size:11px; font-weight:600; color:#6A042C; margin-bottom:3px;">Healz</div>@Dr. Albino, the plan is FOLFOX for stage III colon cancer. The pathology report has no MMR/MSI result. It can change the options, so I propose testing before cycle 1.</div>
+<div style="max-width:92%; background:#6A042C; color:#FFFFFF; padding:10px 12px; border-radius:14px 14px 14px 4px; font-size:12.5px; line-height:1.45;"><div style="font-size:11px; font-weight:600; color:#E4FB3F; margin-bottom:3px;">Dr. Miguel Albino</div>Agree. Order MMR/MSI testing before the first cycle. If it's dMMR, we discuss adding immunotherapy.</div>
+<div style="max-width:92%; background:#F5F0EB; padding:10px 12px; border-radius:14px 14px 14px 4px; font-size:12.5px; line-height:1.45;"><div style="font-size:11px; font-weight:600; color:#6A042C; margin-bottom:3px;">Healz</div>The FOLFOX plan itself matches the guidelines.</div>
+</div>
+</div>
+<div>
+<h2 style="font-size:clamp(30px,3.4vw,44px); line-height:1.08; letter-spacing:-0.03em; font-weight:500;">What's included in Healz Annual?</h2>
+<ul style="display:grid; gap:0; margin-top:28px;">
+<sc-for list="{{ included }}" as="inc" hint-placeholder-count="6">
+<li style="display:flex; gap:14px; align-items:flex-start; padding:14px 0; border-top:1px solid #E7DFD9; font-size:17px; line-height:1.45;"><span style="flex:none; width:24px; height:24px; border-radius:50%; background:#6A042C; color:#E4FB3F; display:grid; place-items:center; margin-top:1px;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg></span>{{ inc }}</li>
+</sc-for>
+</ul>
+<a href="#pricing" style="display:inline-flex; align-items:center; gap:10px; height:52px; padding:0 24px; border-radius:999px; background:#E4FB3F; color:#1E1519; font-weight:600; font-size:16px; margin-top:28px;" style-hover="background:#D4EE1C; color:#1E1519;">See plans<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
+</div>
+</div>
+</section>
+
+<section id="pricing" data-screen-label="09 Pricing" style="background:#F3EDE7; padding:clamp(56px,8vw,104px) 0; scroll-margin-top:56px;">
+<div style="max-width:1200px; margin:0 auto; padding:0 clamp(20px,4vw,40px);">
+<h2 style="font-size:clamp(30px,3.4vw,44px); line-height:1.08; letter-spacing:-0.03em; font-weight:500;">Stay covered for the whole journey</h2>
+<p style="margin-top:14px; font-size:17px; line-height:1.5; color:#5E5357; max-width:520px;">Cancer is measured in months, not weeks. Pick the plan that stays with you through all of it.</p>
+<div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap:16px; margin-top:40px;">
+
+<div style="position:relative; background:#FFFFFF; border:2px solid #1E1519; border-radius:24px; padding:clamp(22px,3vw,32px); display:flex; flex-direction:column;">
+<span style="position:absolute; top:-13px; left:28px; font-size:12px; font-weight:700; letter-spacing:0.04em; padding:5px 12px; border-radius:999px; background:#E4FB3F;">SAVE 40%</span>
+<p style="font-size:15px; font-weight:600;">Annual</p>
+<div style="display:flex; align-items:baseline; gap:6px; margin-top:8px;"><span style="font-size:48px; line-height:1; letter-spacing:-0.04em; font-weight:500;">$1.37</span><span style="font-size:17px; color:#5E5357;">/ day</span></div>
+<p style="margin-top:8px; font-size:15px; color:#5E5357;"><s>$828</s> <strong style="color:#1E1519; font-weight:600;">$499 today</strong></p>
+<ul style="display:grid; gap:10px; margin:24px 0 28px; padding-top:20px; border-top:1px solid #EEE6E0;">
+<sc-for list="{{ annual }}" as="a" hint-placeholder-count="6">
+<li style="display:flex; gap:10px; align-items:flex-start; font-size:15px; line-height:1.45;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6A042C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex:none; margin-top:2px;"><path d="M20 6 9 17l-5-5"></path></svg>{{ a }}</li>
+</sc-for>
+</ul>
+<a href="#" style="margin-top:auto; display:flex; align-items:center; justify-content:center; gap:10px; height:52px; border-radius:999px; background:#E4FB3F; color:#1E1519; font-weight:600; font-size:16px;" style-hover="background:#D4EE1C; color:#1E1519;">Go annual. Save $329</a>
+</div>
+
+<div style="background:#FFFFFF; border:1px solid #E7DFD9; border-radius:24px; padding:clamp(22px,3vw,32px); display:flex; flex-direction:column;">
+<p style="font-size:15px; font-weight:600;">Monthly</p>
+<div style="display:flex; align-items:baseline; gap:6px; margin-top:8px;"><span style="font-size:48px; line-height:1; letter-spacing:-0.04em; font-weight:500;">$69</span><span style="font-size:17px; color:#5E5357;">/mo</span></div>
+<p style="margin-top:8px; font-size:15px; color:#5E5357;">Billed monthly</p>
+<ul style="display:grid; gap:10px; margin:24px 0 28px; padding-top:20px; border-top:1px solid #EEE6E0;">
+<sc-for list="{{ monthly }}" as="m" hint-placeholder-count="6">
+<li style="display:flex; gap:10px; align-items:flex-start; font-size:15px; line-height:1.45; color:{{ m.color }};"><sc-if value="{{ m.on }}" hint-placeholder-val="{{ true }}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6A042C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex:none; margin-top:2px;"><path d="M20 6 9 17l-5-5"></path></svg></sc-if><sc-if value="{{ m.off }}" hint-placeholder-val="{{ false }}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B3A8A3" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex:none; margin-top:2px;"><path d="M5 12h14"></path></svg></sc-if><span>{{ m.t }}</span></li>
+</sc-for>
+</ul>
+<a href="#" style="margin-top:auto; display:flex; align-items:center; justify-content:center; gap:10px; height:52px; border-radius:999px; border:1.5px solid #1E1519; color:#1E1519; font-weight:600; font-size:16px;" style-hover="background:#1E1519; color:#FFFFFF;">Start monthly</a>
+</div>
+
+</div>
+<div style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px 24px; margin-top:20px; font-size:14px; line-height:1.5; color:#5E5357;">
+<span>Cancel anytime. Prices in USD.</span>
+<span>A top oncologist in your chat is added separately, when you want one. <a href="#doctors" style="color:#6A042C; font-weight:600;">See prices ↓</a></span>
+</div>
+</div>
+</section>
+
+<section id="doctors" data-screen-label="10 Doctors" style="padding:clamp(56px,8vw,104px) 0; scroll-margin-top:56px;">
+<div style="max-width:1200px; margin:0 auto; padding:0 clamp(20px,4vw,40px); display:flex; align-items:flex-end; justify-content:space-between; gap:20px; flex-wrap:wrap;">
+<h2 style="font-size:clamp(30px,3.4vw,44px); line-height:1.08; letter-spacing:-0.03em; font-weight:500; max-width:640px;">170+ doctors from leading hospitals</h2>
+<div style="display:flex; gap:8px;">
+<button type="button" aria-label="Previous" onClick="{{ docPrev }}" style="width:44px; height:44px; border-radius:50%; border:1px solid #D9CFC8; background:#FFFFFF; color:#1E1519; display:grid; place-items:center; cursor:pointer;" style-hover="background:#1E1519; color:#FFFFFF;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"></path></svg></button>
+<button type="button" aria-label="Next" onClick="{{ docNext }}" style="width:44px; height:44px; border-radius:50%; border:1px solid #D9CFC8; background:#FFFFFF; color:#1E1519; display:grid; place-items:center; cursor:pointer;" style-hover="background:#1E1519; color:#FFFFFF;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg></button>
+</div>
+</div>
+<div ref="{{ docRef }}" style="display:flex; gap:16px; overflow-x:auto; scroll-snap-type:x mandatory; scrollbar-width:none; padding:28px max(clamp(20px,4vw,40px), calc((100% - 1200px) / 2 + clamp(20px,4vw,40px))) 4px; scroll-padding-left:max(clamp(20px,4vw,40px), calc((100% - 1200px) / 2 + clamp(20px,4vw,40px)));">
+<sc-for list="{{ doctors }}" as="d" hint-placeholder-count="5">
+<article style="flex:0 0 min(264px, 76vw); scroll-snap-align:start; display:flex; flex-direction:column;">
+<div style="aspect-ratio:4 / 5; border-radius:20px; overflow:hidden; background:#EDE5DE;"><img src="{{ d.photo }}" alt="{{ d.name }}" style="width:100%; height:100%; object-fit:cover; object-position:50% 25%; display:block;"></div>
+<h3 style="margin-top:14px; font-size:18px; line-height:1.25; font-weight:600; letter-spacing:-0.01em;">{{ d.name }}</h3>
+<p style="margin-top:2px; font-size:14px; color:#6A042C; font-weight:500;">{{ d.role }}</p>
+<p style="margin-top:8px; font-size:14px; line-height:1.45; color:#5E5357;">{{ d.cred }}</p>
+<p style="margin-top:10px; display:flex; align-items:center; gap:8px; font-size:13px; line-height:1.35; color:#1E1519;"><img src="{{ d.flag }}" alt="" style="width:18px; height:auto; border-radius:2px; flex:none;"><span>{{ d.city }} · <span style="color:#6B5F63;">{{ d.org }}</span></span></p>
+</article>
+</sc-for>
+</div>
+<div style="max-width:1200px; margin:0 auto; padding:0 clamp(20px,4vw,40px);">
+<div style="display:flex; flex-wrap:wrap; gap:8px; margin-top:28px;">
+<sc-for list="{{ specialties }}" as="sp" hint-placeholder-count="14">
+<span style="font-size:13px; font-weight:500; padding:7px 13px; border-radius:999px; border:1px solid #E0D6CF; background:#FFFFFF;">{{ sp }}</span>
+</sc-for>
+<span style="font-size:13px; font-weight:600; padding:7px 13px; border-radius:999px; background:#1E1519; color:#FFFFFF;">+16 more</span>
+</div>
+
+<div style="margin-top:clamp(40px,5vw,64px); background:#FFFFFF; border:1px solid #EEE6E0; border-radius:28px; padding:clamp(24px,4vw,48px); display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap:28px 64px;">
+<div>
+<h3 style="font-size:clamp(24px,2.4vw,32px); line-height:1.12; letter-spacing:-0.025em; font-weight:500;">A top doctor in your chat <span style="background:#E4FB3F; padding:0 6px; -webkit-box-decoration-break:clone; box-decoration-break:clone;">for 7 days</span></h3>
+<p style="margin-top:14px; font-size:16px; line-height:1.5; color:#5E5357;">Joins within 24 hours, sometimes longer, already knows your case and answers every question.</p>
+<a href="#" style="display:inline-flex; align-items:center; gap:10px; height:50px; padding:0 22px; border-radius:999px; background:#E4FB3F; color:#1E1519; font-weight:600; font-size:15px; margin-top:24px;" style-hover="background:#D4EE1C; color:#1E1519;">Add a doctor to my chat<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
+</div>
+<div>
+<sc-for list="{{ addons }}" as="ad" hint-placeholder-count="4">
+<div style="display:flex; justify-content:space-between; gap:16px; padding:16px 0; border-top:1px solid #EEE6E0;">
+<div><p style="font-size:16px; font-weight:600;">{{ ad.t }}</p><p style="margin-top:3px; font-size:14px; line-height:1.4; color:#6B5F63;">{{ ad.d }}</p></div>
+<p style="font-size:16px; font-weight:600; white-space:nowrap;">{{ ad.p }}</p>
+</div>
+</sc-for>
+</div>
+</div>
+</div>
+</section>
+
+<section data-screen-label="11 Founders" style="padding:0 0 clamp(56px,8vw,104px);">
+<div style="max-width:1200px; margin:0 auto; padding:0 clamp(20px,4vw,40px);">
+<div style="background:#F3EDE7; border-radius:28px; display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 380px), 1fr)); gap:0 48px; overflow:hidden;">
+<div style="padding:clamp(28px,5vw,64px);">
+<h2 style="font-size:clamp(30px,3.4vw,44px); line-height:1.08; letter-spacing:-0.03em; font-weight:500;">Cancer came into our own families too.</h2>
+<p style="margin-top:20px; font-size:17px; line-height:1.55; color:#5E5357;">We learned how much depends on asking the right question at the right moment.</p>
+<p style="margin-top:14px; font-size:17px; line-height:1.55;">We built Healz.ai with one goal: <span style="background:#E4FB3F; padding:0 4px; font-weight:600; -webkit-box-decoration-break:clone; box-decoration-break:clone;">help one million people beat cancer.</span></p>
+<p style="margin-top:24px; font-size:16px; font-weight:600;">Igor &amp; Alex</p>
+<p style="font-size:14px; color:#6B5F63;">Founders of Healz.ai</p>
+<a href="#start" style="display:inline-flex; align-items:center; gap:10px; height:52px; padding:0 24px; border-radius:999px; background:#E4FB3F; color:#1E1519; font-weight:600; font-size:16px; margin-top:28px;" style-hover="background:#D4EE1C; color:#1E1519;">Get my next steps<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
+</div>
+<div style="display:flex; align-items:flex-end; justify-content:center; padding-top:32px; min-height:340px;">
+<img src="https://healz.ai/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Ffounder-igor-cut.f32f4554.png&amp;w=1920&amp;q=75&amp;dpl=0e2382919d063fcbd31728554e6ae4c373dcd8e7" alt="Igor, co-founder of Healz" style="height:clamp(300px,32vw,420px); width:auto; display:block; margin-right:-40px; position:relative; z-index:1;">
+<img src="https://healz.ai/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Ffounder-alex-cut.1799f166.png&amp;w=1920&amp;q=75&amp;dpl=0e2382919d063fcbd31728554e6ae4c373dcd8e7" alt="Alex, co-founder of Healz" style="height:clamp(270px,28.5vw,375px); width:auto; display:block; position:relative; z-index:2;">
+</div>
+</div>
+</div>
+</section>
+
+<section id="faq" data-screen-label="12 FAQ" style="padding:clamp(56px,8vw,104px) 0; border-top:1px solid #E7DFD9; scroll-margin-top:56px;">
+<div style="max-width:1200px; margin:0 auto; padding:0 clamp(20px,4vw,40px); display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap:24px 72px; align-items:start;">
+<h2 style="font-size:clamp(30px,3.4vw,44px); line-height:1.08; letter-spacing:-0.03em; font-weight:500;">FAQ for cancer fighters</h2>
+<div style="grid-column:span 1;">
+<sc-for list="{{ faqs }}" as="f" hint-placeholder-count="5">
+<div style="border-bottom:1px solid #E7DFD9;">
+<button type="button" onClick="{{ f.toggle }}" style="width:100%; display:flex; align-items:center; justify-content:space-between; gap:16px; padding:20px 0; background:none; border:0; cursor:pointer; text-align:left; color:#1E1519; font-size:17px; line-height:1.4; font-weight:500;">
+<span>{{ f.q }}</span>
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex:none; transition:transform .2s; transform:rotate({{ f.rot }}deg);"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg>
+</button>
+<sc-if value="{{ f.open }}" hint-placeholder-val="{{ false }}"><p style="padding:0 36px 22px 0; font-size:16px; line-height:1.55; color:#5E5357;">{{ f.a }}</p></sc-if>
+</div>
+</sc-for>
+<button type="button" onClick="{{ toggleMore }}" style="margin-top:20px; display:inline-flex; align-items:center; gap:8px; height:44px; padding:0 18px; border-radius:999px; border:1.5px solid #1E1519; background:transparent; color:#1E1519; font-size:15px; font-weight:600; cursor:pointer;" style-hover="background:#1E1519; color:#FFFFFF;">{{ moreLabel }}</button>
+</div>
+</div>
+</section>
+
+<section id="important" data-screen-label="13 Important information" style="padding:0 0 clamp(56px,8vw,96px); scroll-margin-top:56px;">
+<div style="max-width:1200px; margin:0 auto; padding:0 clamp(20px,4vw,40px);">
+<div style="border:1px solid #E0D6CF; border-radius:24px; padding:clamp(22px,3vw,36px); display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap:12px 48px;">
+<h3 style="font-size:22px; line-height:1.25; font-weight:600; letter-spacing:-0.01em;">Important information</h3>
+<p style="font-size:16px; line-height:1.55; color:#5E5357;"><strong style="color:#1E1519; font-weight:600;">Not a medical provider.</strong> Healz.ai is an educational service. Always discuss every decision with your doctor. AI can make mistakes.</p>
+</div>
+</div>
+</section>
+
+<footer data-screen-label="14 Footer" style="background:#1C0A12; color:#FFFFFF; padding:clamp(48px,6vw,80px) 0 32px;">
+<div style="max-width:1200px; margin:0 auto; padding:0 clamp(20px,4vw,40px);">
+<div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(160px, 1fr)); gap:32px;">
+<div><img src="https://healz.ai/lp/healz-logo-white.svg" alt="Healz" style="height:26px; width:auto; display:block;"><p style="margin-top:14px; font-size:14px; line-height:1.5; color:rgba(255,255,255,0.72); max-width:240px;">Your partner through cancer.</p></div>
+<div style="display:flex; flex-direction:column; gap:10px; font-size:14px;"><p style="font-size:13px; color:rgba(255,255,255,0.6); font-weight:600;">Product</p><a href="#features" style="color:#FFFFFF;" style-hover="color:#E4FB3F;">What Healz does</a><a href="#how" style="color:#FFFFFF;" style-hover="color:#E4FB3F;">How it works</a><a href="#pricing" style="color:#FFFFFF;" style-hover="color:#E4FB3F;">Pricing</a><a href="#doctors" style="color:#FFFFFF;" style-hover="color:#E4FB3F;">Doctors</a><a href="#faq" style="color:#FFFFFF;" style-hover="color:#E4FB3F;">FAQ</a></div>
+<div style="display:flex; flex-direction:column; gap:10px; font-size:14px;"><p style="font-size:13px; color:rgba(255,255,255,0.6); font-weight:600;">Company</p><a href="https://healz.ai/blog" style="color:#FFFFFF;" style-hover="color:#E4FB3F;">Blog</a><a href="#" style="color:#FFFFFF;" style-hover="color:#E4FB3F;">Contact Us</a><a href="https://www.businessinsider.com/ai-healthcare-cancer-startup-doctor-wife-diagnosis-treatment-invested-2026-9" style="color:#FFFFFF;" style-hover="color:#E4FB3F;">Featured in Business Insider ↗</a></div>
+<div style="display:flex; flex-direction:column; gap:10px; font-size:14px;"><p style="font-size:13px; color:rgba(255,255,255,0.6); font-weight:600;">Legal</p><a href="https://healz.ai/legal/terms" style="color:#FFFFFF;" style-hover="color:#E4FB3F;">Terms of Service</a><a href="https://healz.ai/legal/privacy" style="color:#FFFFFF;" style-hover="color:#E4FB3F;">Privacy Policy</a><a href="https://healz.ai/sms" style="color:#FFFFFF;" style-hover="color:#E4FB3F;">SMS Program</a></div>
+</div>
+<div style="margin-top:48px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.14); display:flex; flex-wrap:wrap; justify-content:space-between; gap:10px 24px; font-size:12.5px; line-height:1.5; color:rgba(255,255,255,0.66);">
+<span>Not a medical provider. Healz.ai is an educational service. Always discuss every decision with your doctor. AI can make mistakes.</span>
+<span>© 2026 HealzAI Inc · 1111B S Governors Ave #92123, Dover, DE 19904, USA</span>
+</div>
+</div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showPromo&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Sections&quot;},&quot;showQuotes&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Sections&quot;},&quot;showCompare&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Sections&quot;}}">
+class Component extends DCLogic {
+  state = { stage: 0, step: 0, faq: 0, more: false };
+  featRef = React.createRef();
+  quoteRef = React.createRef();
+  docRef = React.createRef();
+
+  slide(ref, dir) {
+    const el = ref.current;
+    if (el) el.scrollBy({ left: dir * Math.max(280, el.clientWidth * 0.66), behavior: 'smooth' });
+  }
+
+  renderVals() {
+    const p = this.props, s = this.state;
+    const IMG = n => `https://healz.ai/_next/image?url=%2F_next%2Fstatic%2Fmedia%2F${n}&w=1920&q=75&dpl=0e2382919d063fcbd31728554e6ae4c373dcd8e7`;
+    const FLAG = n => `https://healz.ai/_next/static/media/${n}`;
+
+    const STAGES = [
+      { label: 'Just diagnosed', items: [
+        ['Check the diagnosis and plan', "Find the options your doctor didn't mention"],
+        ['Get to the right hospital', 'Find the center and doctor for your cancer'],
+        ['Stop losing weeks', 'Get the scan, biopsy or visit sooner']] },
+      { label: 'Waiting for a scan or biopsy', items: [
+        ['Stop losing weeks', 'Healz finds where you can get the scan, biopsy or visit sooner'],
+        ["Avoid your doctors' mistakes", 'Every report from every doctor, checked for mistakes and explained'],
+        ['Track every result', 'See what to ask next']] },
+      { label: 'In treatment', items: [
+        ['Get through treatment', 'Chemo, radiation, surgery or immunotherapy: each has its own traps'],
+        ['Track every result', 'See if treatment is working, and what to ask next'],
+        ['Find trials that fit you', 'Open trials near home that match the biopsy']] },
+      { label: 'Caring for someone', items: [
+        ['Your cancer control center', 'Stage, markers, plan and next steps in one place'],
+        ['Top oncologists in your chat', 'Join within 24 hours, sometimes longer, and stay 7 days'],
+        ['AI contacts hospitals for you', 'Drafts the email to a top cancer center, you tap send']] }
+    ];
+
+    const STEPS = [
+      { title: 'Stop losing weeks', desc: 'Healz finds where you can get the scan, biopsy or visit sooner', form: true },
+      { title: "Avoid your doctors' mistakes", desc: 'Every report from every doctor, checked for mistakes and explained' },
+      { title: 'Check the diagnosis and plan', desc: "Find the options your doctor didn't mention", badge: true },
+      { title: 'Get to the right hospital', desc: 'Your local hospital may not be enough. Find the center and doctor for your cancer' },
+      { title: 'Get through treatment', desc: 'Chemo, radiation, surgery or immunotherapy: each has its own traps' },
+      { title: 'Track every result', desc: 'See if treatment is working, and what to ask next' }
+    ];
+
+    const FAQ = [
+      ['Will Healz read my pathology report?', 'Yes. Add labs, scans and docs to the chat. Every report from every doctor is checked for mistakes and explained.'],
+      ['Can Healz find clinical trials for me?', 'Yes. Healz finds open trials near home that match the biopsy, and helps you get into the latest trials.'],
+      ['Does Healz work for caregivers? My mom has cancer.', 'Yes. Healz is built for patients and their caregivers. Add her reports and scans and ask everything in one chat.'],
+      ['What does it cost?', 'Annual is $499 today ($1.37 / day). Monthly is $69/mo. Cancel anytime. A top oncologist in your chat is added separately, when you want one.'],
+      ['Does Healz replace my oncologist?', 'No. Healz.ai is an educational service, not a medical provider. Always discuss every decision with your doctor.'],
+      ['Is my data private?', 'Anonymous when you want. A built-in redactor you use to remove identifying details, so your questions never have to carry your name.'],
+      ['Can I share imaging (CT, MRI, PET, X-ray)?', 'Yes. For a written report by a radiologist on your MRI, CT, X-ray or ultrasound, add MRI & Imaging Review ($449).'],
+      ['What if my case is complex and needs human eyes?', 'Add a top doctor to your chat for 7 days. For complex and late-stage cases, the Complete Oncology Review matches a top German oncologist to your case.']
+    ];
+
+    const DOCS = [
+      ['Dr. Miguel Albino', 'Medical oncologist & hematologist', 'Board-certified (ABIM). 17 years in practice', 'Austin, USA', 'flag-us.f6c4bb63.svg', 'Previously 10 years at Texas Oncology', 'doctor-albino.eadf8ad6.jpg'],
+      ['Dr. Ruslan Absalyamov', 'Medical oncologist & cancer surgeon', "Israel's largest cancer center. ESMO-certified", 'Tel Aviv, Israel', 'flag-il.4f1d27ae.svg', 'Davidoff Cancer Center', 'doctor-absalyamov.3a1c2de1.jpg'],
+      ['Dr. Maxim Kochergin', 'Uro-oncologist', 'A top-20 hospital worldwide. 6+ peer-reviewed papers', 'Vienna, Austria', 'flag-at.aa0fa1f4.svg', 'MedUni Wien (AKH)', 'doctor-kochergin.3f12a0cb.jpg'],
+      ['Dr. Dmitry Shapiro', 'Chief of general & visceral surgery', 'Board-certified surgeon. Previously at University Hospital Münster', 'Cologne, Germany', 'flag-de.8f787698.svg', 'St. Vinzenz Hospital', 'doctor-shapiro.8ec8b4e8.jpg'],
+      ['Dr. Sofia Kholod', 'Internal medicine & diabetes', 'Trained at Shaare Zedek, Jerusalem. 12 years in practice', 'Jerusalem, Israel', 'flag-il.4f1d27ae.svg', 'Second opinions on complex cases', 'doctor-kholod.875ae80a.jpg'],
+      ['Dr. Otar Lazariashvili', 'Cardiologist, cardiac imaging', "Cardiac MRI fellowship at Guy's and St Thomas'", 'Exeter, UK', 'flag-gb.79904b58.svg', 'Royal Devon University Hospital', 'doctor-lazariashvili.b308181d.jpg'],
+      ['Prof. Daniel Munblit', 'Paediatrician & allergist', "Reader in Paediatrics at King's College London", 'London, UK', 'flag-gb.79904b58.svg', 'Visiting Reader, Imperial College London', 'doctor-munblit.56750086.jpg'],
+      ['Dr. Samson Arveladze', 'Orthopaedic & hand surgeon', 'Hand surgery at Ichilov. Research at the AO Foundation, Davos', 'Tel Aviv, Israel', 'flag-il.4f1d27ae.svg', 'Tel Aviv Sourasky Medical Center', 'doctor-arveladze.59a73fd2.jpg']
+    ];
+
+    const faqCount = s.more ? FAQ.length : 5;
+
+    return {
+      showPromo: p.showPromo ?? true,
+      showQuotes: p.showQuotes ?? true,
+      showCompare: p.showCompare ?? true,
+
+      stages: STAGES.map((st, i) => {
+        const on = i === s.stage;
+        return { label: st.label, bg: on ? '#1E1519' : '#FFFFFF', fg: on ? '#FFFFFF' : '#1E1519', bd: on ? '#1E1519' : '#DDD3CC', select: () => this.setState({ stage: i }) };
+      }),
+      stageItems: STAGES[s.stage].items.map(([t, d], i) => ({ n: i + 1, t, d })),
+
+      steps: STEPS.map((st, i) => {
+        const open = i === s.step;
+        return {
+          n: i + 1, title: st.title, desc: st.desc, open,
+          hasForm: !!st.form, hasBadge: !!st.badge,
+          rot: open ? 180 : 0,
+          numBg: open ? '#E4FB3F' : 'transparent', numBd: open ? '#E4FB3F' : '#D9CFC8',
+          toggle: () => this.setState({ step: open ? -1 : i })
+        };
+      }),
+
+      quotes: [
+        { tag: 'It caught what her doctors missed', text: "They didn't really do the right thing by me... I should have been on letrozole right from the start.", who: 'A woman after endometrial cancer, retelling what Healz told her' },
+        { tag: 'It connected the dots', text: 'There was a rebound effect 6 to 8 weeks later, and Healz picked it up, explained exactly.', who: 'A man with prostate cancer, on a PSA spike after antibiotics' },
+        { tag: 'It told him not to wait', text: "The old machine delivers the same radiation. Her tumor won't wait for a sharper alignment photo.", who: "A husband, 78, reading Healz's answer on whether to wait for a newer radiation machine" },
+        { tag: 'The real science', text: 'Perplexity Max was always telling me you need to talk to your oncologist... Healz tries to help you understand the real science.', who: "A father whose child's cancer came back" },
+        { tag: 'Why she joined', text: 'It said the word cavitating, and likely metastatic... that is when I decided to join.', who: 'A woman watching lung nodules after endometrial cancer' }
+      ],
+
+      compare: [
+        { label: 'Built for', healz: 'Cancer. Trained on 40M+ cancer studies.', other: 'Any question, on any topic.' },
+        { label: 'Memory', healz: 'Remembers every scan, every dose, every side effect, through treatment and long after.', other: 'Forgets you between sessions.' },
+        { label: 'Doctors', healz: 'Top oncologists join your chat, usually within 24 hours.', other: 'No doctor in the chat.' },
+        { label: 'Answers', healz: 'Helps you understand the real science.', other: 'Often stops at "talk to your oncologist."' },
+        { label: 'Action', healz: 'Contacts hospitals and insurers, finds trials that match the biopsy.', other: 'Leaves the calls and emails to you.' }
+      ],
+
+      included: [
+        "Guides you through cancer by the world's latest guidelines",
+        'Oncologists from top 20 world cancer centers',
+        '20% off every doctor case',
+        'Contacts hospitals and insurers for you',
+        'Gets you into the latest trials',
+        "Saves your money from treatments that won't work. Sometimes $100k."
+      ],
+      annual: [
+        "Guides you through cancer by the world's latest guidelines.",
+        'Oncologists from top 20 world cancer centers',
+        '20% off every doctor case',
+        'Contacts hospitals and insurers for you.',
+        'Gets you into the latest trials.',
+        "Saves your money from treatments that won't work. Sometimes $100k."
+      ],
+      monthly: [
+        ["Guides you through cancer by the world's latest guidelines.", true],
+        ['Oncologists from top 20 world cancer centers (not included)', false],
+        ['20% off every doctor case (not included)', false],
+        ['Contacts hospitals and insurers for you.', true],
+        ['Gets you into the latest trials.', true],
+        ["Saves your money from treatments that won't work. Sometimes $100k.", true]
+      ].map(([t, on]) => ({ t, on, off: !on, color: on ? '#1E1519' : '#8A7E82' })),
+
+      doctors: DOCS.map(([name, role, cred, city, flag, org, photo]) => ({ name, role, cred, city, org, flag: FLAG(flag), photo: IMG(photo) })),
+      specialties: ['Oncology', 'Hematology', 'Surgery', 'Radiology', 'Urology', 'Mammology', 'Genetics', 'Gastroenterology', 'Endocrinology', 'Cardiology', 'Neurology', 'Pulmonology', 'Nutrition', 'Psychology'],
+      addons: [
+        { t: 'Specialist doctor', d: 'Gynecologist, Endocrinologist, Cardiologist and 50 more', p: '$399' },
+        { t: 'MRI & Imaging Review', d: 'Written report by Radiologist on your MRI, CT, X-ray or Ultrasound', p: '$449' },
+        { t: 'Oncologist', d: 'Best for follow-ups & double-checking your strategy', p: '$599' },
+        { t: 'Complete Oncology Review', d: 'Top German oncologist matched to your case. Best for complex & late-stage cases.', p: '$1,790' }
+      ],
+
+      faqs: FAQ.slice(0, faqCount).map(([q, a], i) => {
+        const open = i === s.faq;
+        return { q, a, open, rot: open ? 45 : 0, toggle: () => this.setState({ faq: open ? -1 : i }) };
+      }),
+      moreLabel: s.more ? 'Show less' : 'Show more',
+      toggleMore: () => this.setState(st => ({ more: !st.more })),
+
+      featRef: this.featRef, quoteRef: this.quoteRef, docRef: this.docRef,
+      featPrev: () => this.slide(this.featRef, -1), featNext: () => this.slide(this.featRef, 1),
+      quotePrev: () => this.slide(this.quoteRef, -1), quoteNext: () => this.slide(this.quoteRef, 1),
+      docPrev: () => this.slide(this.docRef, -1), docNext: () => this.slide(this.docRef, 1)
+    };
+  }
+}
+</script>
+</body>
+</html>

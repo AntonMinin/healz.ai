@@ -1,0 +1,39 @@
+---
+import { specialties } from '@/data/content';
+import { doctors } from '@/data/doctors';
+
+import Carousel from '../islands/Carousel';
+import Container from '../ui/Container.astro';
+import Heading from '../ui/Heading.astro';
+import Tag from '../ui/Tag.astro';
+import AddOns from './doctors/AddOns.astro';
+import DoctorCard from './doctors/DoctorCard.astro';
+import Eyebrow from '../ui/Eyebrow.astro';
+---
+
+<section id="doctors" class="pb-[clamp(64px,8vw,112px)]" aria-labelledby="doctors-title">
+  <Container id="doctor-list" class="pt-2">
+    <Eyebrow>Meet our doctors</Eyebrow>
+    <Heading id="doctors-title" class="pt-5">
+      170+ doctors from leading hospitals
+    </Heading>
+  </Container>
+  <div class="mt-8">
+    <Carousel client:visible label="Healz doctors">
+      {doctors.map((doctor) => (
+        <DoctorCard doctor={doctor} />
+      ))}
+      <ul slot="aside" class="flex max-w-[820px] flex-wrap gap-1.5" aria-label="Specialties">
+        {specialties.map((specialty) => (
+          <li>
+            <Tag tone="sand">{specialty}</Tag>
+          </li>
+        ))}
+        <li>
+          <Tag tone="ink">+16 more</Tag>
+        </li>
+      </ul>
+    </Carousel>
+  </div>
+  <AddOns />
+</section>

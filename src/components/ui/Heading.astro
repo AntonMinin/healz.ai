@@ -1,0 +1,24 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+
+type Level = 'h1' | 'h2' | 'h3';
+type Size = 'display' | 'h2' | 'h3' | 'card';
+
+interface Props extends HTMLAttributes<'h2'> {
+  as?: Level;
+  size?: Size;
+}
+
+const { as: Tag = 'h2', size = 'h2', class: className, ...rest } = Astro.props;
+
+const sizes: Record<Size, string> = {
+  display: 'text-display',
+  h2: 'text-h2',
+  h3: 'text-h3',
+  card: 'text-card',
+};
+---
+
+<Tag class:list={['font-normal text-balance', sizes[size], className]} {...rest}>
+  <slot />
+</Tag>

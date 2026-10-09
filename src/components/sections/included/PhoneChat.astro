@@ -1,0 +1,38 @@
+---
+import albino from '@/assets/images/doctors/albino.jpg';
+
+import ChatBubble from '../../ui/ChatBubble.astro';
+import Photo from '../../ui/Photo.astro';
+---
+
+<div
+  class="flex w-[290px] flex-none flex-col gap-2.5 rounded-t-[42px] border-[9px] border-b-0 border-ink bg-white px-3.5 pt-5"
+  role="img"
+  aria-label="Healz chat: the AI and Dr. Miguel Albino review a chemo plan together"
+>
+  <div class="flex items-center gap-2.5 border-b border-line pb-2.5" aria-hidden="true">
+    <div class="flex-1">
+      <p class="text-sm font-semibold">Chemo plan review</p>
+      <p class="text-[11px] text-muted">Healz · Dr. Miguel Albino · Alex</p>
+    </div>
+    <div class="size-7 overflow-hidden rounded-full">
+      <Photo src={albino} alt="" widths={[64]} sizes="28px" position="50% 20%" />
+    </div>
+  </div>
+  <div class="flex flex-col gap-2.5" aria-hidden="true">
+    <ChatBubble author="user" size="xs" class="max-w-[86%]">
+      @healz ask your doctor if my chemo plan is right
+    </ChatBubble>
+    <ChatBubble author="healz" name="Healz" size="xs" class="max-w-[92%]">
+      @Dr. Albino, the plan is FOLFOX for stage III colon cancer. The pathology report has no
+      MMR/MSI result. It can change the options, so I propose testing before cycle 1.
+    </ChatBubble>
+    <ChatBubble author="doctor" name="Dr. Miguel Albino" size="xs" class="max-w-[92%]">
+      Agree. Order MMR/MSI testing before the first cycle. If it's dMMR, we discuss adding
+      immunotherapy.
+    </ChatBubble>
+    <ChatBubble author="healz" name="Healz" size="xs" class="max-w-[92%]">
+      The FOLFOX plan itself matches the guidelines.
+    </ChatBubble>
+  </div>
+</div>

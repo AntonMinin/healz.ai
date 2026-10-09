@@ -1,0 +1,72 @@
+---
+import { Image } from 'astro:assets';
+import { LuCheck, LuMinus } from 'react-icons/lu';
+
+import logo from '@/assets/logos/healz.svg';
+import { comparison } from '@/data/content';
+
+import Container from '../ui/Container.astro';
+import Heading from '../ui/Heading.astro';
+
+const row = 'grid grid-fit-200 gap-x-8';
+---
+
+<section class="bg-white py-[clamp(56px,7vw,96px)]" aria-labelledby="compare-title">
+  <Container class="grid grid-fit-360 items-start gap-x-24 gap-y-10">
+    <div>
+      <Heading id="compare-title" class="max-w-[440px]">
+        Why cancer patients switch from GPT to Healz
+      </Heading>
+      <figure class="mt-9">
+        <blockquote class="max-w-[420px] border-l-[3px] border-lime pl-5 text-xl leading-[1.4] tracking-[-0.01em]">
+          <p>
+            “I'm using ChatGPT, Gemini, Claude, Perplexity... I have gone to Healz now more
+            frequently first.”
+          </p>
+        </blockquote>
+        <figcaption class="mt-3 pl-[23px] text-sm text-muted">
+          A husband, 78, caring for his wife
+        </figcaption>
+      </figure>
+    </div>
+    <div>
+      <div class:list={[row, 'pb-3 text-md ']} aria-hidden="true">
+        <Image src={logo} alt="" class="h-7 w-auto" />
+        <span class="text-muted">General AI chatbots</span>
+      </div>
+      <ul aria-label="Healz compared with general AI chatbots">
+        {comparison.map((item) => (
+          <li
+            class:list={[
+              row,
+              'gap-y-2 border-dashed border-b border-[#e3ddd8] py-[18px] leading-[1.45]',
+            ]}
+          >
+            <p class="flex items-start gap-2.5 font-medium">
+              <LuCheck
+                className="mt-[3px] size-[18px] flex-none text-maroon"
+                strokeWidth={2.2}
+                aria-hidden="true"
+              />
+              <span>
+                <span class="sr-only">Healz: </span>
+                {item.healz}
+              </span>
+            </p>
+            <p class="flex items-start gap-2.5 text-subtle">
+              <LuMinus
+                className="mt-[3px] size-[18px] flex-none text-faint"
+                strokeWidth={2}
+                aria-hidden="true"
+              />
+              <span>
+                <span class="sr-only">General AI chatbots: </span>
+                {item.others}
+              </span>
+            </p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </Container>
+</section>

@@ -1,0 +1,12 @@
+---
+interface Props {
+  name: string;
+}
+
+const { name } = Astro.props;
+---
+
+<p class="flex items-center gap-3.5">
+  <span class="h-px w-11 bg-ink" aria-hidden="true"></span>
+  <span class="font-serif text-[22px] italic">{name}</span>
+</p>

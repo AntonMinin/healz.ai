@@ -1,0 +1,27 @@
+---
+import { Image } from 'astro:assets';
+import { LuUser } from 'react-icons/lu';
+
+import logo from '@/assets/logos/healz.svg';
+import { site } from '@/config/site';
+
+import Container from '../ui/Container.astro';
+---
+
+<header class="bg-white">
+  <Container class="flex h-header items-center gap-7">
+    <a href="#top" class="me-auto block" aria-label="Healz home">
+      <Image src={logo} alt="Healz" class="block h-7 w-auto" loading="eager" />
+    </a>
+    <a href={site.links.blog} class="text-[15px] text-ink hover:text-maroon">
+      Blog
+    </a>
+    <a
+      href={site.links.login}
+      class="inline-flex items-center gap-2 text-[15px] text-ink hover:text-maroon"
+    >
+      <LuUser className="size-5" strokeWidth={1.5} aria-hidden="true" />
+      Log in
+    </a>
+  </Container>
+</header>

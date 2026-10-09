@@ -1,0 +1,40 @@
+---
+import { site } from '@/config/site';
+import { plans } from '@/data/content';
+
+import Container from '../ui/Container.astro';
+import Heading from '../ui/Heading.astro';
+import PlanCard from './pricing/PlanCard.astro';
+
+const { annual, monthly } = plans;
+---
+
+<section id="pricing" class="py-[clamp(64px,8vw,112px)]" aria-labelledby="pricing-title">
+  <Container>
+    <div class="grid grid-fit-420 items-end gap-x-24 gap-y-4">
+      <Heading id="pricing-title">Stay covered for the whole journey</Heading>
+      <p class="max-w-[440px] text-[17px] leading-normal text-body">
+        Cancer is measured in months, not weeks. Pick the plan that stays with you through all of
+        it.
+      </p>
+    </div>
+    <div class="mt-10 grid grid-fit-340 gap-8">
+      <PlanCard {...annual} href={site.links.app} featured>
+        <Fragment slot="note">
+          <s>{annual.oldPrice}</s>
+          <span class="font-semibold text-ink">{annual.total} today</span>
+        </Fragment>
+      </PlanCard>
+      <PlanCard {...monthly} href={site.links.app}>
+        <Fragment slot="note">{monthly.note}</Fragment>
+      </PlanCard>
+    </div>
+    <p class="mt-5 text-[13px] leading-[1.55] text-muted">
+      Cancel anytime. Prices in USD. A top oncologist in your chat is added separately, when you
+      want one.{' '}
+      <a href="#add-ons" class="text-ink underline underline-offset-2">
+        See prices
+      </a>
+    </p>
+  </Container>
+</section>

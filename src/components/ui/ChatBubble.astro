@@ -1,0 +1,53 @@
+---
+type Author = 'user' | 'healz' | 'doctor';
+type Size = 'md' | 'sm' | 'xs' | 'fluid';
+
+interface Props {
+  author: Author;
+  name?: string;
+  size?: Size;
+  class?: string;
+}
+
+const { author, name, size = 'md', class: className } = Astro.props;
+
+const sizes: Record<Size, { box: string; radius: string; name: string }> = {
+  md: { box: 'px-4 py-3.5 text-sm leading-normal', radius: '18px', name: 'mb-1 text-xs' },
+  sm: {
+    box: 'px-3.5 py-3 text-[13px] leading-[1.45]',
+    radius: '16px',
+    name: 'mb-[3px] text-[11px]',
+  },
+  xs: {
+    box: 'px-3 py-2.5 text-[12.5px] leading-[1.45]',
+    radius: '14px',
+    name: 'mb-[3px] text-[11px]',
+  },
+  fluid: {
+    box: 'px-[1.15em] py-[1em] leading-normal',
+    radius: '1.3em',
+    name: 'mb-[0.3em] text-[0.86em]',
+  },
+};
+
+const tones: Record<Author, string> = {
+  user: 'self-end bg-ink text-white',
+  healz: size === 'xs' ? 'bg-chip' : 'bg-white',
+  doctor: 'bg-maroon text-white',
+};
+
+const nameTones: Record<Author, string> = {
+  user: '',
+  healz: 'text-maroon',
+  doctor: 'text-lime',
+};
+
+const { box, radius, name: nameClass } = sizes[size];
+const corner =
+  author === 'user' ? `${radius} ${radius} 4px ${radius}` : `${radius} ${radius} ${radius} 4px`;
+---
+
+<div class:list={[box, tones[author], className]} style={`border-radius: ${corner}`}>
+  {name && <p class:list={['font-semibold', nameClass, nameTones[author]]}>{name}</p>}
+  <slot />
+</div>

@@ -1,0 +1,50 @@
+---
+import {
+  LuFlaskConical,
+  LuMail,
+  LuPercent,
+  LuPiggyBank,
+  LuRoute,
+  LuStethoscope,
+} from 'react-icons/lu';
+
+import Button from '../ui/Button.astro';
+import Container from '../ui/Container.astro';
+import Heading from '../ui/Heading.astro';
+import PhoneChat from './included/PhoneChat.astro';
+
+const items = [
+  { icon: LuRoute, text: "Guides you through cancer by the world's latest guidelines" },
+  { icon: LuStethoscope, text: 'Oncologists from top 20 world cancer centers' },
+  { icon: LuPercent, text: '20% off every doctor case' },
+  { icon: LuMail, text: 'Contacts hospitals and insurers for you' },
+  { icon: LuFlaskConical, text: 'Gets you into the latest trials' },
+  { icon: LuPiggyBank, text: "Saves your money from treatments that won't work. Sometimes $100k." },
+];
+---
+
+<section
+  id="included"
+  class="bg-white pt-[clamp(40px,5vw,72px)] pb-[clamp(64px,8vw,112px)]"
+  aria-labelledby="included-title"
+>
+  <Container class="grid grid-fit-420 items-center gap-x-16 gap-y-12">
+    <div class="flex h-[clamp(440px,40vw,520px)] justify-center overflow-hidden bg-lime pt-[clamp(32px,4vw,52px)] shadow-[0_10px_35px_rgba(0,0,0,0.08)]">
+      <PhoneChat />
+    </div>
+    <div>
+      <Heading id="included-title">What's included in the Healz annual plan?</Heading>
+      <ul class="mt-7 grid gap-3 text-[17px] leading-[1.4]">
+        {items.map(({ icon: Icon, text }) => (
+          <li class="flex items-start gap-3.5">
+            <Icon className="size-[21px] flex-none" strokeWidth={1.4} aria-hidden="true" />
+            {text}
+          </li>
+        ))}
+      </ul>
+      <Button href="#pricing" block class="mt-8">
+        Get started
+      </Button>
+    </div>
+  </Container>
+</section>

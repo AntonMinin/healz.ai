@@ -1,0 +1,40 @@
+---
+interface Props {
+  text: string;
+  letterSpacing?: number;
+  class?: string;
+}
+
+const { text, letterSpacing = 2.6, class: className } = Astro.props;
+const pathId = 'stamp-path';
+---
+
+<svg
+  viewBox="0 0 120 120"
+  width="112"
+  height="112"
+  class:list={['block', className]}
+  aria-hidden="true"
+>
+  <defs>
+    <path id={pathId} d="M60,60 m-44,0 a44,44 0 1,1 88,0 a44,44 0 1,1 -88,0"></path>
+  </defs>
+  <g class="origin-[60px_60px] [transform-box:view-box] motion-safe:animate-stamp-spin">
+    <text
+      font-size="10.4"
+      font-weight="600"
+      letter-spacing={letterSpacing}
+      fill="var(--color-maroon)"
+    >
+      <textPath href={`#${pathId}`}>{text}</textPath>
+    </text>
+  </g>
+  <circle cx="60" cy="60" r="25" fill="var(--color-lime)"></circle>
+  <path
+    d="M60 71.5c-6-4.3-10-8.1-10-12.4a5.4 5.4 0 0 1 10-2.8 5.4 5.4 0 0 1 10 2.8c0 4.3-4 8.1-10 12.4z"
+    fill="none"
+    stroke="var(--color-maroon)"
+    stroke-width="2"
+    stroke-linejoin="round"
+  ></path>
+</svg>

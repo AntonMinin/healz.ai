@@ -1,0 +1,38 @@
+---
+import { site } from '@/config/site';
+import { addOns } from '@/data/content';
+
+import Button from '../../ui/Button.astro';
+import Container from '../../ui/Container.astro';
+import Heading from '../../ui/Heading.astro';
+import Highlight from '../../ui/Highlight.astro';
+---
+
+<Container id="add-ons" class="mt-[clamp(48px,6vw,80px)]">
+  <div class="grid grid-fit-340 gap-x-[72px] gap-y-7 bg-white p-[clamp(24px,4vw,56px)] shadow-[0_10px_35px_rgba(0,0,0,0.05)]">
+    <div>
+      <Heading as="h3" size="h3">
+        A top doctor in your chat <Highlight>for 7 days</Highlight>
+      </Heading>
+      <p class="mt-3.5 max-w-[400px] leading-normal text-body">
+        Joins within 24 hours, sometimes longer, already knows your case and answers every question.
+      </p>
+      <Button href={site.links.app} class="mt-7">
+        Add a doctor to my chat
+      </Button>
+    </div>
+    <dl>
+      {addOns.map((addOn, index) => (
+        <div class={`flex items-baseline justify-between gap-5 py-4 ${index ? 'border-dashed border-t border-line' : ''}`}>
+          <dt>
+            {addOn.title}
+            <span class="mt-[3px] block text-sm leading-[1.45] text-muted">
+              {addOn.description}
+            </span>
+          </dt>
+          <dd class="whitespace-nowrap tabular-nums">{addOn.price}</dd>
+        </div>
+      ))}
+    </dl>
+  </div>
+</Container>

@@ -1,0 +1,58 @@
+---
+import { LuArrowRight } from 'react-icons/lu';
+
+import pressPhoto from '@/assets/images/press-story.jpg';
+import { site } from '@/config/site';
+import { press } from '@/data/content';
+
+import Button from '../ui/Button.astro';
+import Container from '../ui/Container.astro';
+import Heading from '../ui/Heading.astro';
+import Photo from '../ui/Photo.astro';
+---
+
+<section
+  class="overflow-x-clip bg-maroon py-[clamp(56px,7vw,96px)] text-white"
+  aria-labelledby="press-title"
+>
+  <Container class="grid grid-fit-420 items-center gap-x-[72px] gap-y-12">
+    <div>
+      <Heading id="press-title" class="max-w-[500px] text-white">
+        This husband used Healz.ai to save his wife from cancer
+      </Heading>
+      <p class="mt-[18px] max-w-[460px] text-xl leading-[1.4] text-maroon-tint">
+        Featured in {press.join(', ').replace(/, ([^,]+)$/, ' and $1')}.
+      </p>
+      <Button
+        href={site.links.pressStory}
+        target="_blank"
+        rel="noopener"
+        variant="invert"
+        size="sm"
+        class="mt-7"
+      >
+        Read the story
+        <LuArrowRight className="size-[15px]" strokeWidth={2} aria-hidden="true" />
+        <span class="sr-only">(opens in a new tab)</span>
+      </Button>
+    </div>
+    <figure class="relative pb-[clamp(72px,8vw,96px)]">
+      <div class="ms-[clamp(0px,5vw,64px)] aspect-4/3 bg-maroon-deep">
+        <Photo
+          src={pressPhoto}
+          alt="A husband and his wife"
+          widths={[480, 720, 960, 1280]}
+          sizes="(min-width: 1000px) 560px, 90vw"
+        />
+      </div>
+      <figcaption class="absolute bottom-0 left-0 w-[min(320px,82%)] -rotate-[1.2deg] bg-white px-[22px] py-5 text-ink">
+        <span class="block text-[11px] font-bold tracking-[0.14em]">BUSINESS INSIDER</span>
+        <span class="mt-2.5 block font-serif text-lg leading-[1.3]">
+          When his wife got sick, this doctor turned to an AI chatbot to navigate her rare cancer
+          diagnosis. Then he invested.
+        </span>
+        <span class="mt-3 block text-xs text-muted">Healthcare · 2026</span>
+      </figcaption>
+    </figure>
+  </Container>
+</section>

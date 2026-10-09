@@ -1,0 +1,68 @@
+---
+import { Image } from 'astro:assets';
+
+import logo from '@/assets/logos/healz-white.svg';
+import { sectionNav, site } from '@/config/site';
+
+import Container from '../ui/Container.astro';
+
+const columns = [
+  { title: 'Product', links: sectionNav },
+  {
+    title: 'About',
+    links: [
+      { href: site.links.blog, label: 'Blog' },
+      { href: site.links.pressStory, label: 'Featured in Business Insider' },
+    ],
+  },
+  {
+    title: 'Support',
+    links: [
+      { href: site.links.contact, label: 'Contact Us' },
+      { href: site.links.sms, label: 'SMS Program' },
+    ],
+  },
+  {
+    title: 'Legal',
+    links: [
+      { href: site.links.terms, label: 'Terms of Service' },
+      { href: site.links.privacy, label: 'Privacy Policy' },
+    ],
+  },
+];
+
+const { streetAddress, addressLocality, addressRegion, postalCode } = site.address;
+---
+
+<footer class="bg-night pt-[clamp(48px,6vw,80px)] pb-8 text-white">
+  <Container>
+    <nav aria-label="Footer" class="grid grid-cols-[repeat(auto-fit,minmax(160px,1fr))] gap-8">
+      {columns.map((column) => (
+        <div class="flex flex-col gap-2.5 text-sm">
+          <h2 class="mb-1 text-sm font-semibold">{column.title}</h2>
+          <ul class="flex flex-col gap-2.5">
+            {column.links.map((link) => (
+              <li>
+                <a href={link.href} class="text-white/75 hover:text-lime">
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </nav>
+    <div class="mt-[clamp(56px,7vw,96px)] flex flex-wrap items-end justify-between gap-5">
+      <Image src={logo} alt="Healz" class="block h-7 w-auto" />
+      <p class="max-w-[640px] text-xs leading-[1.55] text-white/70 sm:text-right">
+        Not a medical provider. Healz.ai is an educational service.
+        <br/>
+        Always discuss every decision
+        with your doctor. AI can make mistakes.
+        <br />© {new Date().getFullYear()}
+        {site.legalName} · {streetAddress}, {addressLocality}, {addressRegion}
+        {postalCode}, USA
+      </p>
+    </div>
+  </Container>
+</footer>

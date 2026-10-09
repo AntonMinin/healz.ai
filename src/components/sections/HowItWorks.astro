@@ -1,0 +1,41 @@
+---
+import { LuFlag } from 'react-icons/lu';
+
+import hike from '@/assets/images/finish-hike.jpg';
+import { steps } from '@/data/content';
+
+import StepsAccordion from '../islands/StepsAccordion';
+import Container from '../ui/Container.astro';
+import Heading from '../ui/Heading.astro';
+import Photo from '../ui/Photo.astro';
+---
+
+<section id="how" class="bg-sand pb-[clamp(48px,6vw,64px)] mt-5" aria-labelledby="how-title">
+  <div class="h-[clamp(340px,42vw,600px)] overflow-hidden bg-[#b9a58e]">
+    <Photo
+      src={hike}
+      alt="A man back to hiking after cancer treatment"
+      widths={[640, 960, 1280, 1920, 2400]}
+      sizes="100vw"
+      position="70% 35%"
+    />
+  </div>
+  <Container class="relative mt-[clamp(-150px,-8vw,-64px)]">
+    <div class="grid grid-fit-340 gap-x-16 gap-y-9 bg-white px-[clamp(22px,6vw,96px)] py-[clamp(28px,5vw,72px)] shadow-[0_10px_35px_rgba(0,0,0,0.06)]">
+      <div>
+        <Heading id="how-title">Take control of every step to beat cancer</Heading>
+        <p class="mt-[18px] max-w-[420px] text-[17px] leading-normal text-body">
+          People get back to running, traveling and enjoying life. You can too. Modern medicine
+          works. Take the next step today.
+        </p>
+      </div>
+      <div>
+        <p class="flex items-center gap-3 text-[15px] font-semibold">
+          <LuFlag className="size-5" strokeWidth={1.5} aria-hidden="true" />
+          From diagnosis to recovery, in 6 steps
+        </p>
+        <StepsAccordion client:visible steps={steps} />
+      </div>
+    </div>
+  </Container>
+</section>

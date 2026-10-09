@@ -1,0 +1,17 @@
+---
+import { sectionNav } from '@/config/site';
+---
+
+<nav aria-label="Page sections" class="scroll-state-container sticky top-masthead z-30">
+  <div class="bg-canvas transition-shadow stuck:shadow-sticky">
+    <ul class="no-scrollbar mx-auto flex h-subnav max-w-page items-center justify-center-safe gap-8 overflow-x-auto px-gutter text-[15px] whitespace-nowrap">
+      {sectionNav.map((item) => (
+        <li>
+          <a href={item.href} class="text-ink hover:text-maroon">
+            {item.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</nav>

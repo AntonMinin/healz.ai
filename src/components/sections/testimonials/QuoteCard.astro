@@ -1,0 +1,27 @@
+---
+import type { Quote } from '@/data/content';
+
+interface Props {
+  quote: Quote;
+}
+
+const { quote } = Astro.props;
+
+const tones: Record<Quote['tone'], string> = {
+  lime: 'bg-lime text-ink',
+  maroon: 'bg-maroon text-white',
+  stone: 'bg-[#d9d0c8] text-ink',
+  ink: 'bg-ink text-white',
+};
+---
+
+<figure class="flex flex-[0_0_min(362px,82vw)] snap-start flex-col bg-white">
+  <div class:list={['flex h-[200px] flex-col justify-between px-6 py-[22px]', tones[quote.tone]]}>
+    <span class="text-[13px] opacity-85">{quote.context}</span>
+    <span class="text-card">{quote.tag}</span>
+  </div>
+  <blockquote class="px-6 pt-6 text-lg leading-[1.42] tracking-[-0.005em]">
+    <p>“{quote.text}”</p>
+  </blockquote>
+  <figcaption class="mt-auto p-6 text-sm leading-[1.45] text-muted">{quote.author}</figcaption>
+</figure>

@@ -1,0 +1,18 @@
+---
+import { faqs } from '@/data/content';
+
+import FaqAccordion from '../islands/FaqAccordion';
+import Container from '../ui/Container.astro';
+import Heading from '../ui/Heading.astro';
+---
+
+<section
+  id="faq"
+  class="bg-white pt-[clamp(64px,8vw,112px)] pb-[clamp(48px,6vw,72px)]"
+  aria-labelledby="faq-title"
+>
+  <Container>
+    <Heading id="faq-title">FAQ for cancer fighters</Heading>
+    <FaqAccordion client:visible faqs={faqs} />
+  </Container>
+</section>

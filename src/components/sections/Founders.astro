@@ -1,0 +1,51 @@
+---
+import alex from '@/assets/images/founder-alex.png';
+import igor from '@/assets/images/founder-igor.png';
+
+import Container from '../ui/Container.astro';
+import Heading from '../ui/Heading.astro';
+import Highlight from '../ui/Highlight.astro';
+import Photo from '../ui/Photo.astro';
+import Signature from '../ui/Signature.astro';
+---
+
+<section
+  class="overflow-hidden "
+  aria-labelledby="founders-title"
+>
+  <Container class="grid grid-fit-400 items-end gap-x-24">
+    <div class="pb-[clamp(48px,7vw,104px)]">
+      <Heading id="founders-title">Cancer came into our own families too.</Heading>
+      <p class="mt-5 max-w-[460px] text-[17px] leading-[1.55] text-body">
+        We learned how much depends on asking the right question at the right moment.
+      </p>
+      <p class="mt-3.5 max-w-[460px] text-[17px] leading-[1.55]">
+        We built Healz.ai with one goal: <Highlight>help one million people beat cancer.</Highlight>
+      </p>
+      <div class="mt-7">
+        <Signature name="Igor & Alex" />
+      </div>
+      <p class="mt-2 text-sm text-muted">Founders of Healz.ai</p>
+    </div>
+    <div class="flex h-[clamp(340px,34vw,460px)] items-end justify-center pt-6">
+      <div class="relative z-1 h-[99%] -me-9 ">
+        <Photo
+          src={alex}
+          alt="Alex, co-founder of Healz"
+          widths={[250, 537]}
+          sizes="250px"
+          fit="height"
+        />
+      </div>
+      <div class="relative z-2 h-[82%]">
+        <Photo
+          src={igor}
+          alt="Igor, co-founder of Healz"
+          widths={[300, 646]}
+          sizes="300px"
+          fit="height"
+        />
+      </div>
+    </div>
+  </Container>
+</section>

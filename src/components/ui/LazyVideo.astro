@@ -1,0 +1,44 @@
+---
+interface Props {
+  src: string;
+  poster: string;
+  class?: string;
+}
+
+const { src, poster, class: className } = Astro.props;
+---
+
+<video
+  class:list={['block size-full object-cover', className]}
+  data-lazy-src={src}
+  poster={poster}
+  muted
+  playsinline
+  preload="none"
+  aria-hidden="true"
+></video>
+
+<script>
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        if (!entry.isIntersecting) continue;
+        const video = entry.target as HTMLVideoElement;
+        observer.unobserve(video);
+        const { lazySrc } = video.dataset;
+        if (!lazySrc) continue;
+        video.src = lazySrc;
+        video.play().catch(() => {});
+      }
+    },
+    { rootMargin: '200px' },
+  );
+
+  if (!reducedMotion) {
+    document.querySelectorAll<HTMLVideoElement>('video[data-lazy-src]').forEach((video) => {
+      observer.observe(video);
+    });
+  }
+</script>
