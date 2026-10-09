@@ -21,7 +21,7 @@ export default function FaqAccordion({ faqs, initialCount = 5 }: Props) {
           return (
             <li
               key={faq.question}
-              className="border-b border-line border-dashed"
+              className="border-b border-dashed border-line"
               hidden={!expanded && i >= initialCount}
             >
               <Disclosure

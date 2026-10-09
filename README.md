@@ -50,7 +50,7 @@ src/
   styles/        токены дизайна (@theme) и утилиты Tailwind
 ```
 
-- JS грузится только для 6 островов (`client:visible`), остальное чистый HTML.
+- JS грузится только для React-островов (`client:visible`) и ленивого видео, остальное чистый HTML.
 - Изображения: `astro:assets` → AVIF/WebP + `srcset`, lazy везде кроме первого экрана.
 - Шрифт DM Sans самохостится через Astro Fonts: preload и fallback с подогнанными метриками (без CLS).
 - SEO/GEO: canonical, Open Graph/Twitter, JSON-LD (Organization, WebSite, MedicalWebPage, Service + Offers + Physicians, FAQPage), sitemap, robots.txt с явным разрешением AI-краулеров, `llms.txt`.

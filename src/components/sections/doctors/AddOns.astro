@@ -23,7 +23,9 @@ import Highlight from '../../ui/Highlight.astro';
     </div>
     <dl>
       {addOns.map((addOn, index) => (
-        <div class={`flex items-baseline justify-between gap-5 py-4 ${index ? 'border-dashed border-t border-line' : ''}`}>
+        <div
+          class={`flex items-baseline justify-between gap-5 py-4 ${index ? 'border-dashed border-t border-line' : ''}`}
+        >
           <dt>
             {addOn.title}
             <span class="mt-[3px] block text-sm leading-[1.45] text-muted">

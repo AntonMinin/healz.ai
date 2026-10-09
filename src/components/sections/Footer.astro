@@ -54,11 +54,10 @@ const { streetAddress, addressLocality, addressRegion, postalCode } = site.addre
     </nav>
     <div class="mt-[clamp(56px,7vw,96px)] flex flex-wrap items-end justify-between gap-5">
       <Image src={logo} alt="Healz" class="block h-7 w-auto" />
-      <p class="max-w-[640px] text-xs leading-[1.55] text-white/70 sm:text-right">
+      <p id="important" class="max-w-[640px] text-xs leading-[1.55] text-white/70 sm:text-right">
         Not a medical provider. Healz.ai is an educational service.
-        <br/>
-        Always discuss every decision
-        with your doctor. AI can make mistakes.
+        <br />
+        Always discuss every decision with your doctor. AI can make mistakes.
         <br />© {new Date().getFullYear()}
         {site.legalName} · {streetAddress}, {addressLocality}, {addressRegion}
         {postalCode}, USA

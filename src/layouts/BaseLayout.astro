@@ -12,11 +12,13 @@ import { absoluteUrl, withBase } from '@/lib/url';
 const canonical = absoluteUrl(withBase(), Astro.site);
 const og = await getImage({ src: ogSource, width: 1200, height: 630, fit: 'cover', format: 'jpg' });
 const ogImage = absoluteUrl(og.src, Astro.site);
-const structuredData = buildStructuredData({
-  page: canonical,
-  logo: absoluteUrl(logo.src, Astro.site),
-  image: ogImage,
-});
+const structuredData = JSON.stringify(
+  buildStructuredData({
+    page: canonical,
+    logo: absoluteUrl(logo.src, Astro.site),
+    image: ogImage,
+  }),
+).replaceAll('<', '\\u003c');
 ---
 
 <!doctype html>
@@ -52,7 +54,7 @@ const structuredData = buildStructuredData({
     <meta name="twitter:image" content={ogImage} />
 
     <Font cssVariable="--font-dm-sans" preload />
-    <script type="application/ld+json" is:inline set:html={JSON.stringify(structuredData)} />
+    <script type="application/ld+json" is:inline set:html={structuredData} />
   </head>
   <body>
     <a
