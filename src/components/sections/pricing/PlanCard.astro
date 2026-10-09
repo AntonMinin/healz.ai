@@ -46,7 +46,7 @@ const { name, badge, price, period, features, cta, href, featured = false } = As
         <CheckItem included={f.included}>{f.text}</CheckItem>
       ))}
     </ul>
-    <Button href={href} variant={featured ? 'primary' : 'outline'} block class="mt-auto">
+    <Button href={href} block class="mt-auto">
       {cta}
     </Button>
   </div>
